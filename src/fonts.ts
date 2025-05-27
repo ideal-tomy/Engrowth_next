@@ -3,17 +3,17 @@ import localFont from 'next/font/local'
 export const notoSans = localFont({
   src: [
     {
-      path: 'fonts/NotoSansJP-Regular.ttf',
+      path: './fonts/NotoSansJP-Regular.ttf', // ここがポイント！
       weight: '400',
       style: 'normal',
     },
     {
-      path: 'fonts/NotoSansJP-Medium.ttf',
+      path: './fonts/NotoSansJP-Medium.ttf',
       weight: '500',
       style: 'normal',
     },
     {
-      path: 'fonts/NotoSansJP-Bold.ttf',
+      path: './fonts/NotoSansJP-Bold.ttf',
       weight: '700',
       style: 'normal',
     },
@@ -25,21 +25,16 @@ export const notoSans = localFont({
 export const notoSerif = localFont({
   src: [
     {
-      path: 'fonts/NotoSerifJP-Regular.ttf',
+      path: './fonts/NotoSerifJP-Regular.ttf',
       weight: '400',
       style: 'normal',
     },
     {
-      path: 'fonts/NotoSerifJP-Medium.ttf',
-      weight: '500',
-      style: 'normal',
-    },
-    {
-      path: 'fonts/NotoSerifJP-Bold.ttf',
+      path: './fonts/NotoSerifJP-Bold.ttf',
       weight: '700',
       style: 'normal',
     },
   ],
   variable: '--font-serif',
   display: 'swap',
-}) 
+})

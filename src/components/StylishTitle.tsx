@@ -77,7 +77,8 @@ const StylishTitle: React.FC<StylishTitleProps> = ({
   const sizeClass = {
     small: 'text-2xl',
     medium: 'text-3xl',
-    large: 'text-4xl'
+    large: 'text-4xl',
+    xlarge: 'text-5xl',
   }[size];
 
   return (

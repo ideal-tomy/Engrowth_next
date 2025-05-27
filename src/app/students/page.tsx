@@ -5,6 +5,7 @@ import CardComponent from '@/components/CardComponent';
 import StylishTitle from '@/components/StylishTitle';
 import SimulationSection from '@/components/SimulationSection';
 import Image from 'next/image';
+import ScrollFadeIn from '@/components/ScrollFadeIn';
 
 const simulationTables = [
   {
@@ -51,29 +52,33 @@ export default function Students() {
   return (
     <div className="students-page">
       <HeroSection 
-        title="学生"
-        subtitle="学生のための英語学習プログラム"
+        title="学生向け英語コーチング"
+        subtitle="留学・進学・キャリアのための英語力を、Engrowthで。"
         bgColor="gradient"
         textColor="light"
         align="center"
         height="medium"
       />
 
-      <section className="students-introduction section-padding">
+      <section className="introduction-section section-padding">
         <div className="container">
           <StylishTitle 
-            title="留学を成功させるために"
-            align="center"
+            title="学生英語、その先へ"
+            subtitle="単語や文法だけでなく、世界で活躍するための実践力を。"
+            align="left"
             size="large"
             className="title-custom-underline"
           />
           <div className="content-grid">
             <div className="content-text">
               <p>
-                海外留学は新しい価値観や環境に触れる貴重な機会です。
-                しかし、準備が不十分だと貴重な留学期間を有効に活用できません。
+                海外留学や国際的なキャリアを目指す学生にとって、英語力は不可欠なスキルです。
                 Engrowthでは、科学的根拠に基づいた英語学習プログラムで、
                 自信を持って英語で自己表現できる状態へと導きます。
+              </p>
+              <p>
+                あなたの目標達成に向けた最適な学習プランを個別に設計し、
+                経験豊富なコンサルタントが伴走します。
               </p>
             </div>
             <div className="content-image student-feature-image">
@@ -93,29 +98,34 @@ export default function Students() {
         <div className="container">
           <h2 className="section-title">こんな方におすすめ</h2>
           <div className="persona-grid">
-            <CardComponent 
-              className="card-icon-top"
-              icon="sentiment_dissatisfied" 
-              title="英語に苦手意識がある"
-              description="文法や単語は知っているのに、実践で使えない方"
-            />
-            <CardComponent 
-              className="card-icon-top"
-              icon="flight_takeoff" 
-              title="留学・進学を目指す"
-              description="海外大学への進学や留学を考えている方"
-            />
-            <CardComponent 
-              className="card-icon-top"
-              icon="work"
-              title="就活で必要"
-              description="外資系企業への就職を視野に入れている方"
-            />
+            <ScrollFadeIn>
+              <CardComponent 
+                className="card-icon-top"
+                icon="sentiment_dissatisfied" 
+                title="英語に苦手意識がある"
+                description="文法や単語は知っているのに、実践で使えない方"
+              />
+            </ScrollFadeIn>
+            <ScrollFadeIn>
+              <CardComponent 
+                className="card-icon-top"
+                icon="flight_takeoff" 
+                title="留学・進学を目指す"
+                description="海外大学への進学や留学を考えている方"
+              />
+            </ScrollFadeIn>
+            <ScrollFadeIn>
+              <CardComponent 
+                className="card-icon-top"
+                icon="work"
+                title="就活で必要"
+                description="外資系企業への就職を視野に入れている方"
+              />
+            </ScrollFadeIn>
           </div>
         </div>
       </section>
 
-      {/* 以下、ステップやシミュレーションなどは必要に応じて追加可能 */}
       <SimulationSection tables={simulationTables} />
     </div>
   );
