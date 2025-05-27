@@ -1,5 +1,5 @@
 import React from 'react';
-import StylishTitle from './StylishTitle';
+import Image from 'next/image';
 
   const feedbackItems = [
     { icon: 'check_circle', text: '自分で出力する' },
@@ -27,9 +27,11 @@ const Reason1Content: React.FC = () => {
         </div>
         <div className="flex-1 flex justify-center">
           {/* 仮画像：日本人コンサルタントのイメージ（例：スーツ姿で親しみやすい雰囲気） */}
-          <img
+          <Image
             src="/images/consultant_sample.jpg"
             alt="日本人コンサルタントのイメージ（例：スーツ姿で親しみやすい雰囲気）"
+            width={288}
+            height={192}
             className="rounded-xl shadow-md object-cover w-72 h-48"
           />
         </div>
@@ -57,9 +59,11 @@ const Reason1Content: React.FC = () => {
         </div>
         <div className="flex justify-center mt-6">
           {/* 仮画像：成功体験の共有イメージ（例：笑顔のグループ、達成感） */}
-          <img
+          <Image
             src="/images/success_sample.jpg"
             alt="成功体験の共有イメージ（例：笑顔のグループ、達成感）"
+            width={256}
+            height={160}
             className="rounded-lg shadow object-cover w-64 h-40"
           />
         </div>
@@ -101,9 +105,11 @@ const Reason1Content: React.FC = () => {
         </div>
         <div className="flex justify-center mt-6">
           {/* 仮画像：サポート・フィードバックのイメージ（例：コンサルタントがサポートする様子） */}
-          <img
+          <Image
             src="/images/support_sample.jpg"
             alt="サポート・フィードバックのイメージ（例：コンサルタントがサポートする様子）"
+            width={256}
+            height={160}
             className="rounded-lg shadow object-cover w-64 h-40"
           />
         </div>
@@ -126,9 +132,11 @@ const Reason1Content: React.FC = () => {
           </div>
         <div className="flex-1 flex justify-center">
           {/* 仮画像：留学・学位取得のイメージ（例：卒業式、学位証書、海外の大学キャンパス） */}
-          <img
+          <Image
             src="/images/degree_sample.jpg"
             alt="留学・学位取得のイメージ（例：卒業式、学位証書、海外の大学キャンパス）"
+            width={256}
+            height={160}
             className="rounded-lg shadow object-cover w-64 h-40"
             />
         </div>

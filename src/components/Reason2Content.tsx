@@ -1,5 +1,5 @@
 import React from 'react';
-import StylishTitle from './StylishTitle';
+import Image from 'next/image';
 
   const failureReasons = [
     {
@@ -79,9 +79,11 @@ const Reason2Content: React.FC = () => {
         </div>
         <div className="flex-1 flex justify-center">
           {/* 仮画像：脳科学・学習イメージ（例：脳のイラストや学習風景） */}
-          <img
+          <Image
             src="/images/science_sample.jpg"
             alt="脳科学・学習イメージ（例：脳のイラストや学習風景）"
+            width={288}
+            height={192}
             className="rounded-xl shadow-md object-cover w-72 h-48"
           />
         </div>
@@ -101,9 +103,11 @@ const Reason2Content: React.FC = () => {
         </div>
         <div className="flex justify-center mt-6">
           {/* 仮画像：失敗例イメージ（例：悩む人物、英会話教室のイラスト） */}
-          <img
+          <Image
             src="/images/failure_sample.jpg"
             alt="失敗例イメージ（例：悩む人物、英会話教室のイラスト）"
+            width={256}
+            height={160}
             className="rounded-lg shadow object-cover w-64 h-40"
           />
         </div>
@@ -134,9 +138,11 @@ const Reason2Content: React.FC = () => {
         </div>
         <div className="flex justify-center mt-6">
           {/* 仮画像：成長・ステップアップのイメージ（例：階段を上る人物、成長グラフ） */}
-          <img
+          <Image
             src="/images/stepup_sample.jpg"
             alt="成長・ステップアップのイメージ（例：階段を上る人物、成長グラフ）"
+            width={256}
+            height={160}
             className="rounded-lg shadow object-cover w-64 h-40"
           />
         </div>
@@ -165,9 +171,11 @@ const Reason2Content: React.FC = () => {
         </div>
         <div className="flex-1 flex justify-center">
           {/* 仮画像：脳科学・理論イメージ（例：脳のイラスト、理論図） */}
-          <img
+          <Image
             src="/images/brain_sample.jpg"
             alt="脳科学・理論イメージ（例：脳のイラスト、理論図）"
+            width={256}
+            height={160}
             className="rounded-lg shadow object-cover w-64 h-40"
           />
         </div>
@@ -184,9 +192,11 @@ const Reason2Content: React.FC = () => {
         </div>
         <div className="flex-1 flex justify-center">
           {/* 仮画像：Engrowthのサポートイメージ（例：サポートする講師、チームワーク） */}
-          <img
+          <Image
             src="/images/engrowth_sample.jpg"
             alt="Engrowthのサポートイメージ（例：サポートする講師、チームワーク）"
+            width={256}
+            height={160}
             className="rounded-lg shadow object-cover w-64 h-40"
           />
         </div>

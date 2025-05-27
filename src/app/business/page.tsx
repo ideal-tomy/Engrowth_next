@@ -134,10 +134,13 @@ export default function Business() {
               </p>
             </div>
             <div className="content-image" style={{ textAlign: 'center' }}>
-              <img 
+              <Image 
                 src="/images/ビジネスミーティング01.jpeg"
                 alt="英語でコミュニケーションをとるビジネスパーソン"
+                width={500} 
+                height={300} 
                 style={{ borderRadius: '18px', boxShadow: '0 8px 32px rgba(204,0,0,0.10)', maxWidth: '100%', height: 'auto', minWidth: 320 }}
+                className="" 
               />
             </div>
           </div>
