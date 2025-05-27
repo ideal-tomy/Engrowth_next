@@ -1,103 +1,162 @@
-import Image from "next/image";
+import Image from 'next/image';
+import Link from 'next/link';
+import HeroSection from '@/components/HeroSection';
+import StylishTitle from '@/components/StylishTitle';
+import CardComponent from '@/components/CardComponent';
+
+// Data for Features section
+const featureItems = [
+  {
+    icon: 'psychology',
+    title: '第二言語習得メソッド',
+    description: '科学的なアプローチに基づいた効果的な学習方法を提供'
+  },
+  {
+    icon: 'support_agent',
+    title: '伴走型サポート',
+    description: '一人一人に合わせた丁寧なサポートで確実な成長を実現'
+  },
+  {
+    icon: 'business_center',
+    title: '実践的な学習環境',
+    description: '実際のビジネスシーンを想定した実践的な学習プログラム'
+  }
+];
 
 export default function Home() {
   return (
-    <div className="grid grid-rows-[20px_1fr_20px] items-center justify-items-center min-h-screen p-8 pb-20 gap-16 sm:p-20 font-[family-name:var(--font-geist-sans)]">
-      <main className="flex flex-col gap-[32px] row-start-2 items-center sm:items-start">
-        <Image
-          className="dark:invert"
-          src="/next.svg"
-          alt="Next.js logo"
-          width={180}
-          height={38}
-          priority
-        />
-        <ol className="list-inside list-decimal text-sm/6 text-center sm:text-left font-[family-name:var(--font-geist-mono)]">
-          <li className="mb-2 tracking-[-.01em]">
-            Get started by editing{" "}
-            <code className="bg-black/[.05] dark:bg-white/[.06] px-1 py-0.5 rounded font-[family-name:var(--font-geist-mono)] font-semibold">
-              src/app/page.tsx
-            </code>
-            .
-          </li>
-          <li className="tracking-[-.01em]">
-            Save and see your changes instantly.
-          </li>
-        </ol>
+    <div className="home-page">
+      <HeroSection 
+        title="第二言語習得メソッド × 伴走型サポート"
+        subtitle="確実な成長と挑戦の場を提供する"
+        bgColor="gradient"
+        textColor="light"
+        align="center"
+        height="large"
+      />
 
-        <div className="flex gap-4 items-center flex-col sm:flex-row">
-          <a
-            className="rounded-full border border-solid border-transparent transition-colors flex items-center justify-center bg-foreground text-background gap-2 hover:bg-[#383838] dark:hover:bg-[#ccc] font-medium text-sm sm:text-base h-10 sm:h-12 px-4 sm:px-5 sm:w-auto"
-            href="https://vercel.com/new?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
+      <section className="home-vision section-padding">
+        <div className="container vision-grid">
+          <div className="vision-text">
+            <h2 className="vision-section-title">私たちが目指す社会</h2>
+            <p>
+              経済的な制約や学習方法への不安から、多くの人が可能性を閉ざしています。
+              私たちは、誰もが挑戦できる社会を目指し、Engrowthを設立しました。
+            </p>
+            <Link href="/vision" className="secondary-button">私たちの想い</Link> 
+          </div>
+          <div className="content-image image-right vision-image-container">
             <Image
-              className="dark:invert"
-              src="/vercel.svg"
-              alt="Vercel logomark"
-              width={20}
-              height={20}
+              src="/images/vision01.png" 
+              alt="Engrowth Vision" 
+              width={500}
+              height={300}
+              className="object-cover"
             />
-            Deploy now
-          </a>
-          <a
-            className="rounded-full border border-solid border-black/[.08] dark:border-white/[.145] transition-colors flex items-center justify-center hover:bg-[#f2f2f2] dark:hover:bg-[#1a1a1a] hover:border-transparent font-medium text-sm sm:text-base h-10 sm:h-12 px-4 sm:px-5 w-full sm:w-auto md:w-[158px]"
-            href="https://nextjs.org/docs?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            Read our docs
-          </a>
+          </div>
         </div>
-      </main>
-      <footer className="row-start-3 flex gap-[24px] flex-wrap items-center justify-center">
-        <a
-          className="flex items-center gap-2 hover:underline hover:underline-offset-4"
-          href="https://nextjs.org/learn?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <Image
-            aria-hidden
-            src="/file.svg"
-            alt="File icon"
-            width={16}
-            height={16}
+      </section>
+
+      <section className="home-features section-padding alt-bg">
+        <div className="container">
+          <StylishTitle 
+            title="Engrowthが提供する独自の価値"
+            align="left"
+            size="large"
+            className="title-custom-underline"
           />
-          Learn
-        </a>
-        <a
-          className="flex items-center gap-2 hover:underline hover:underline-offset-4"
-          href="https://vercel.com/templates?framework=next.js&utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <Image
-            aria-hidden
-            src="/window.svg"
-            alt="Window icon"
-            width={16}
-            height={16}
+          <div className="feature-grid card-grid">
+            {featureItems.map((item, index) => (
+              <CardComponent
+                key={index}
+                icon={item.icon}
+                title={item.title}
+                description={item.description}
+                className="card-icon-top"
+              />
+            ))}
+          </div>
+          <div style={{ textAlign: 'center', marginTop: '2rem' }}>
+            <Link href="/services" className="primary-button">サービス詳細を見る</Link>
+          </div>
+        </div>
+      </section>
+
+      <section className="home-target section-padding">
+        <div className="container">
+          <StylishTitle 
+            title="あなたの目的達成を最適化"
+            align="left"
+            size="large"
+            className="title-custom-underline"
           />
-          Examples
-        </a>
-        <a
-          className="flex items-center gap-2 hover:underline hover:underline-offset-4"
-          href="https://nextjs.org?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
+          <div className="target-grid card-grid">
+            <CardComponent 
+              title="ビジネスパーソン向け"
+              backgroundImageUrl="/images/ビジネスミーティング01.jpeg"
+              className="service-card"
+            >
+              <p>グローバルな舞台で活躍するための実践的英語力を習得。キャリアアップを加速させます。</p>
+              <Link href="/business" className="primary-button">詳細を見る</Link>
+            </CardComponent>
+            <CardComponent 
+              title="学生向け"
+              backgroundImageUrl="/images/キャンパスライフ01.webp"
+              className="service-card"
+            >
+              <p>留学や国際的なキャリアを見据え、アカデミックな英語力と異文化理解力を養います。</p>
+              <Link href="/students" className="primary-button">詳細を見る</Link>
+            </CardComponent>
+          </div>
+        </div>
+      </section>
+
+      <section className="home-support section-padding alt-bg">
+        <div className="container support-grid">
+          <div className="support-title">
+            <StylishTitle
+              title="安心して学習を始めるために"
+              size="large"
+              className="title-custom-underline"
+            />
+            <p className="support-intro-text">
+              学習を始める前の疑問や不安は、こちらで解消できます。
+            </p>
           <Image
-            aria-hidden
-            src="/globe.svg"
-            alt="Globe icon"
-            width={16}
-            height={16}
-          />
-          Go to nextjs.org →
-        </a>
-      </footer>
+              src="/images/top06.png" 
+              alt="安心して学習を始めるために" 
+              width={500}
+              height={300}
+              className="support-image"
+            />
+          </div>
+          <div className="support-links-detailed">
+            <div className="support-link-items">
+              <div className="support-link-item">
+                <span className="material-symbols-outlined support-icon">quiz</span>
+                <div className="support-link-text">
+                  <h4><Link href="/faq">よくあるご質問</Link></h4>
+                  <p>サービスや学習方法について多く寄せられる質問と回答をまとめました。</p>
+                </div>
+              </div>
+              <div className="support-link-item">
+                <span className="material-symbols-outlined support-icon">payments</span>
+                <div className="support-link-text">
+                  <h4><Link href="/pricing">料金プラン</Link></h4>
+                  <p>各プランの詳細な料金体系はこちらでご確認いただけます。</p>
+                </div>
+              </div>
+              <div className="support-link-item">
+                <span className="material-symbols-outlined support-icon">contact_support</span>
+                 <div className="support-link-text">
+                  <h4><Link href="/contact">直接相談する</Link></h4>
+                  <p>個別のご質問やご相談はこちらからどうぞ。</p>
+                 </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
     </div>
   );
 }

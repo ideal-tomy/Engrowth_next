@@ -1,0 +1,63 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  --color-primary: #8b0000;
+  --color-accent: #858585;
+  --color-navy: #1a2a3a;
+  --color-gray: #f9f9f9;
+  --color-text: #333333;
+  --color-white: #ffffff;
+  --color-main: #8b0000;
+  --shadow-standard: 0 4px 12px rgba(0, 0, 0, 0.08);
+  --animation-standard: all 0.3s ease;
+}
+
+html, body {
+  margin: 0;
+  padding: 0;
+  font-family: var(--font-sans);
+}
+
+body {
+  min-width: 320px;
+  min-height: 100vh;
+  background-color: #fff;
+  color: var(--color-text);
+  line-height: 1.7;
+}
+
+main {
+  padding-top: 100px;
+  min-height: calc(100vh - 100px);
+}
+
+h1, h2, h3, h4, h5, h6 {
+  font-family: var(--font-serif);
+  color: var(--color-navy);
+  line-height: 1.3;
+  margin-top: 0;
+}
+
+h1 {
+  font-size: 2.5rem;
+  font-weight: 700;
+  margin-bottom: 1.5rem;
+}
+
+h2 {
+  font-size: 2rem;
+  font-weight: 600;
+  margin-bottom: 1.2rem;
+}
+
+h3 {
+  font-size: 1.5rem;
+  font-weight: 600;
+  margin-bottom: 1rem;
+}
+
+p {
+  margin-bottom: 1.5rem;
+} 

@@ -1,0 +1,311 @@
+.services {
+  padding-top: 80px;
+}
+
+/* 強化された高級感のあるバナータイトル - Services専用 */
+.services-page .luxury-banner-title {
+  margin: 2rem 0 4rem;
+  /* background: linear-gradient(135deg, #1a2a3a, #8b0000); */ /* ページ固有の背景は一旦コメントアウト */
+}
+
+/* .services-page .luxury-banner-title::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-image: url("data:image/svg+xml,%3Csvg width='20' height='20' viewBox='0 0 20 20' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='%23d4af37' fill-opacity='0.1' fill-rule='evenodd'%3E%3Ccircle cx='3' cy='3' r='3'/%3E%3Ccircle cx='13' cy='13' r='3'/%3E%3C/g%3E%3C/svg%3E");
+  opacity: 0.3;
+  z-index: 0;
+} */ /* このスタイルを削除 */
+
+/* .services-page .luxury-banner-title::after {
+  content: '';
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  height: 6px;
+  background: linear-gradient(90deg, transparent, #d4af37, transparent);
+} */ /* このスタイルも削除 */
+
+.services-page .luxury-banner-title h2 {
+  position: relative;
+  font-size: 2.5rem;
+  font-weight: 700;
+  letter-spacing: 1px;
+  margin: 0 0 0.5rem 0;
+  color: #fff;
+  text-shadow: 0 2px 4px rgba(0, 0, 0, 0.3);
+  z-index: 1; /* 文字が手前に来るように念のため */
+}
+
+.services-page .luxury-banner-title p {
+  position: relative;
+  max-width: 800px;
+  margin: 1rem auto 0;
+  font-size: 1.2rem;
+  line-height: 1.6;
+  color: rgba(255, 255, 255, 0.9);
+  z-index: 1; /* 文字が手前に来るように念のため */
+}
+
+/* CTAボックス内のバナータイトル */
+.services-page .cta-box .luxury-banner-title {
+  margin-top: 0;
+  background: linear-gradient(135deg, #8b0000, #d4af37);
+}
+
+/* バナータイトルのバリエーション */
+.luxury-banner-gold {
+  background: linear-gradient(135deg, #8b0000, #d4af37) !important;
+}
+
+.luxury-banner-dark {
+  background: linear-gradient(135deg, #000, #333) !important;
+}
+
+/* アイコン */
+.banner-icon {
+  font-size: 2.5rem;
+  margin-bottom: 1rem;
+  opacity: 0.9;
+  position: relative;
+  z-index: 1;
+}
+
+/* アクセントライン */
+.banner-accent-line {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  height: 6px;
+  background: linear-gradient(90deg, transparent, #d4af37, transparent);
+  z-index: 1;
+}
+
+/* アニメーション */
+@keyframes bannerShine {
+  0% {
+    background-position: -100% 0;
+  }
+  100% {
+    background-position: 200% 0;
+  }
+}
+
+.banner-animate {
+  position: relative;
+  overflow: hidden;
+}
+
+.banner-animate::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(
+    90deg,
+    transparent,
+    rgba(255, 255, 255, 0.2),
+    transparent
+  );
+  background-size: 200% 100%;
+  animation: bannerShine 3s linear infinite;
+  z-index: 0;
+}
+
+/* Reasonコンテンツ用の仕切り線 */
+.reason-separator {
+  border: none;
+  border-top: 1px solid #e0e0e0; /* 細いグレーの線 */
+  margin: 3rem 0 2rem; /* 上下の余白を調整 */
+}
+
+.hero {
+  background-color: var(--color-off-white);
+  padding: 6rem 0;
+  text-align: center;
+}
+
+.hero h1 {
+  font-size: 2.5rem;
+  margin-bottom: 1.5rem;
+  color: var(--color-main);
+}
+
+.hero p {
+  font-size: 1.2rem;
+  margin-bottom: 2rem;
+}
+
+.learning-design {
+  padding: 4rem 0;
+  text-align: center;
+  background-color: var(--color-white);
+}
+
+.learning-design h2 {
+  color: var(--color-main);
+  margin-bottom: 2rem;
+}
+
+.learning-content {
+  max-width: 800px;
+  margin: 0 auto;
+}
+
+.learning-content p {
+  margin-bottom: 1rem;
+  font-size: 1.1rem;
+}
+
+.learning-content ul {
+  list-style: none;
+  padding: 0;
+}
+
+.learning-content li {
+  margin-bottom: 0.5rem;
+}
+
+.program-structure {
+  padding: 4rem 0;
+  background-color: var(--color-off-white);
+}
+
+.program-structure h2 {
+  text-align: center;
+  color: var(--color-main);
+  margin-bottom: 3rem;
+}
+
+.structure-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 2rem;
+}
+
+.structure-card {
+  background-color: var(--color-white);
+  padding: 2rem;
+  border-radius: 8px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  text-align: center;
+}
+
+.structure-card h3 {
+  color: var(--color-main);
+  margin-bottom: 1rem;
+}
+
+.support {
+  padding: 4rem 0;
+  background-color: var(--color-white);
+}
+
+.support h2 {
+  text-align: center;
+  color: var(--color-main);
+  margin-bottom: 3rem;
+}
+
+.support-content {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 2rem;
+}
+
+.support-item {
+  background-color: var(--color-off-white);
+  padding: 2rem;
+  border-radius: 8px;
+  text-align: center;
+}
+
+.support-item h3 {
+  color: var(--color-main);
+  margin-bottom: 1rem;
+}
+
+.results {
+  padding: 4rem 0;
+  background-color: var(--color-off-white);
+}
+
+.results h2 {
+  text-align: center;
+  color: var(--color-main);
+  margin-bottom: 3rem;
+}
+
+.results-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 2rem;
+}
+
+.result-card {
+  background-color: var(--color-white);
+  padding: 2rem;
+  border-radius: 8px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  text-align: center;
+}
+
+.result-card h3 {
+  color: var(--color-main);
+  margin-bottom: 1rem;
+}
+
+@media (max-width: 768px) {
+  .hero {
+    padding: 4rem 0;
+  }
+
+  .hero h1 {
+    font-size: 2rem;
+  }
+
+  .structure-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .support-content {
+    grid-template-columns: 1fr;
+  }
+
+  .results-grid {
+    grid-template-columns: 1fr;
+  }
+}
+
+/* Services.css - Add specific styles for the Services page */
+
+.services-page .stylish-title-container {
+  margin-bottom: 0 !important; /* 既存のスタイルを上書きするため !important を使用 */
+}
+
+.services-page .cta-box {
+  text-align: center; /* cta-box 内のテキストを中央揃え */
+}
+
+.services-page .cta-box .luxury-banner-title h2,
+.services-page .cta-box .luxury-banner-title p {
+  /* BannerTitle 内のテキストはデフォルトで中央揃えされている場合があるので、
+     必要に応じて text-align: center; を追加または確認 */
+}
+
+.services-page .cta-box p {
+  /* cta-box 直下のpタグも中央揃え */
+  text-align: center;
+}
+
+.services-page .cta-box .action-buttons {
+  /* ボタンコンテナも中央揃えにする */
+  text-align: center;
+} 

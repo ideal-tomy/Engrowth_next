@@ -1,0 +1,599 @@
+/* --- global.cssから継承されるスタイル --- */
+/* :root変数, bodyフォント, h1-h6フォント, .containerなど */
+
+.business-page {
+  padding-top: 80px; /* ヘッダー高さを考慮 */
+}
+
+.section-title {
+  text-align: center;
+  color: var(--color-main); /* #8b0000 */
+  margin-bottom: 3rem;
+  font-size: 2.2rem;
+  position: relative;
+  display: inline-block; /* 下線のため */
+  left: 50%;
+  transform: translateX(-50%);
+}
+
+.section-title::after {
+  content: '';
+  position: absolute;
+  bottom: -10px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 60px;
+  height: 3px;
+  background-color: var(--color-accent-gold); /* #d4af37 */
+}
+
+/* 1. ヒーローセクション */
+.business-hero {
+  background-color: #333; /* 暗め背景 */
+  background-image: url('../assets/images/ビジネスミーティング01.jpeg'); /* Update path */
+  background-size: cover;
+  background-position: center;
+  padding: 8rem 0;
+  text-align: center;
+  color: var(--color-white); /* 白文字 */
+  position: relative;
+}
+.business-hero::before { /* 背景画像を少し暗くするオーバーレイ */
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: rgba(0, 0, 0, 0.5);
+}
+.business-hero .container {
+    position: relative; /* オーバーレイより手前に表示 */
+    z-index: 1;
+}
+.business-hero h1 {
+  font-size: 3.5rem;
+  margin-bottom: 1rem;
+  color: var(--color-accent-gold); /* 金アクセント: #d4af37 */
+  font-weight: 700;
+}
+.business-hero p {
+  font-size: 1.3rem;
+  opacity: 0.9;
+}
+
+/* 2. 導入：基礎英語力の底上げ */
+.business-introduction {
+  padding: 5rem 0;
+  background-color: var(--color-white); /* 白背景 */
+}
+.intro-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 3rem;
+  align-items: center;
+}
+.intro-text h2 {
+  color: var(--color-main); /* #8b0000 */
+  margin-bottom: 1.5rem;
+  font-size: 2rem;
+  font-weight: 600;
+}
+.intro-text p {
+  margin-bottom: 1.5rem;
+  line-height: 1.8;
+}
+.intro-image img {
+  width: 100%;
+  height: auto;
+  border-radius: 8px;
+  box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+}
+/* フェードインアニメーション (global.cssにある想定) */
+.fade-in {
+  animation: fadeIn 1s ease-out forwards;
+}
+
+/* 3. 9つの強み グリッド表示 */
+.business-strengths {
+  padding: 5rem 0;
+  background-color: #eeeeee; /* 背景: #eeeeee */
+}
+.strengths-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr); /* 3カラム */
+  gap: 2rem;
+}
+.strength-card {
+  background-color: var(--color-white); /* カード背景: 白 */
+  padding: 2rem;
+  border-radius: 8px;
+  text-align: center;
+  box-shadow: 0 2px 5px rgba(0,0,0,0.05);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  height: 100%; /* グリッドアイテムの高さを揃える */
+}
+.strength-card:hover {
+  transform: translateY(-8px); /* ホバー時に浮き上がり */
+  box-shadow: 0 8px 15px rgba(0,0,0,0.1);
+}
+.strength-icon {
+  font-size: 2.5rem;
+  margin-bottom: 1rem;
+  color: var(--color-main); /* アクセント: #8b0000 */
+}
+.strength-card h3 {
+  color: var(--color-accent-red); /* アクセント: #cc0000 */
+  margin-bottom: 0.8rem;
+  font-size: 1.4rem;
+}
+.strength-card p {
+  font-size: 0.95rem;
+  color: var(--color-text-light);
+}
+
+/* 4. 学習スケジュール（平日／週末切替） */
+.business-schedule {
+  padding: 5rem 0;
+  background-color: var(--color-off-white); /* 背景: #fdfdfd */
+}
+.schedule-tabs {
+  display: flex;
+  justify-content: center;
+  margin-bottom: 2.5rem;
+}
+.tab {
+  padding: 0.8rem 2.5rem;
+  background-color: #d3d3d3; /* タイトル: #d3d3d3 */
+  border: none;
+  cursor: pointer;
+  font-size: 1.1rem;
+  transition: background-color 0.3s ease, color 0.3s ease;
+  font-family: 'Noto Sans JP', sans-serif;
+  font-weight: 500;
+  color: #555;
+}
+.tab:first-child {
+  border-top-left-radius: 6px;
+  border-bottom-left-radius: 6px;
+}
+.tab:last-child {
+  border-top-right-radius: 6px;
+  border-bottom-right-radius: 6px;
+}
+.tab:hover {
+  background-color: #bfbfbf;
+}
+.tab.active {
+  background-color: var(--color-accent-red); /* アクセント赤: #cc0000 */
+  color: var(--color-white);
+}
+.schedule-table-container {
+  overflow-x: auto; /* モバイルで横スクロール */
+  max-width: 1000px;
+  margin: 0 auto;
+}
+.schedule-table {
+  width: 100%;
+  border-collapse: collapse;
+  box-shadow: 0 2px 5px rgba(0,0,0,0.05);
+}
+.schedule-table td {
+  padding: 1rem;
+  text-align: left;
+  border: 1px solid #ddd;
+}
+.schedule-item.learning td {
+  background-color: #ffe6e6; /* 学習ブロック: #ffe6e6 */
+}
+.schedule-item.daily td {
+  background-color: #f8f8f8; /* 日常ブロック: #f8f8f8 */
+}
+
+/* 週末表示のスタイル追加 */
+.weekend-tables {
+  max-width: 1000px;
+  margin: 0 auto;
+}
+
+.weekend-header {
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 1rem;
+}
+
+.weekend-day {
+  width: 48%;
+  text-align: center;
+  font-size: 1.3rem;
+  font-weight: bold;
+  padding: 0.5rem;
+  background-color: #ffb3b3;
+  color: #333;
+  border-radius: 6px;
+}
+
+.weekend-tables-container {
+  display: flex;
+  justify-content: space-between;
+  gap: 2%;
+}
+
+.weekend-table {
+  width: 48%;
+}
+
+.time-column {
+  width: 80px;
+  font-weight: bold;
+  text-align: center !important;
+}
+
+.activity-column {
+  position: relative;
+}
+
+.duration-tag {
+  display: inline-block;
+  background-color: rgba(139, 0, 0, 0.1); /* 赤系の薄い背景 */
+  color: var(--color-primary);
+  padding: 0.2em 0.6em;
+  border-radius: 4px;
+  font-size: 0.8em;
+  margin-left: 0.8em;
+  font-family: var(--font-body);
+  font-weight: 500;
+}
+
+/* 5. 学習デザインの3つの柱 */
+.business-pillars {
+  padding: 5rem 0;
+  background: linear-gradient(135deg, #fdfdfd 0%, #f0f0f0 100%); /* グラデ背景 */
+}
+.pillars-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr); /* 3カラム */
+  gap: 2rem;
+}
+.pillar-card {
+  background-color: var(--color-white); /* カード背景: 白 */
+  padding: 2.5rem;
+  border-radius: 8px;
+  box-shadow: 0 5px 15px rgba(0,0,0,0.08);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+.pillar-card:hover {
+  transform: translateY(-8px); /* ホバーアニメーション */
+  box-shadow: 0 10px 20px rgba(0,0,0,0.12);
+}
+.pillar-card h3 {
+  color: var(--color-main); /* #8b0000 */
+  margin-bottom: 1rem;
+  font-size: 1.5rem;
+  display: flex;
+  align-items: center;
+}
+.pillar-icon {
+  margin-right: 0.5rem;
+  font-size: 1.8rem;
+  color: var(--color-accent-red); /* #cc0000 */
+}
+.pillar-card p {
+  color: var(--color-text-light);
+  line-height: 1.7;
+}
+
+/* 6. シミュレーション英会話①②（テーブル表示） */
+.business-simulation {
+  padding: 5rem 0;
+  background-color: var(--color-white); /* 白背景 */
+}
+.simulation-table-container {
+  overflow-x: auto; /* モバイルで横スクロール */
+  margin-bottom: 2.5rem;
+}
+.simulation-table {
+  width: 100%;
+  min-width: 600px; /* 横スクロール発生のため */
+  border-collapse: collapse;
+  box-shadow: 0 2px 5px rgba(0,0,0,0.05);
+  margin: 0 auto;
+  max-width: 800px;
+}
+.simulation-table th,
+.simulation-table td {
+  padding: 1rem;
+  text-align: left;
+  border: 1px solid #e0e0e0;
+}
+.simulation-table th {
+  background-color: #ff7f7f; /* ヘッダー: #ff7f7f */
+  color: var(--color-white);
+  font-weight: 700;
+}
+.simulation-table tbody tr:nth-child(odd) td {
+  background-color: #ffe6e6; /* 奇数行: #ffe6e6 */
+}
+.simulation-table tbody tr:nth-child(even) td {
+  background-color: #fdfdfd; /* 偶数行: #fdfdfd */
+}
+
+/* シミュレーションテーブルの追加スタイル */
+.week-column {
+  width: 120px;
+  text-align: center;
+  background-color: #ff7f7f;
+}
+
+.theme-column {
+  text-align: center;
+  background-color: #ff7f7f;
+}
+
+.week-cell {
+  text-align: center;
+  font-weight: bold;
+}
+
+.simulation-title {
+  background-color: #f0f0f0;
+  padding: 0.8rem;
+  width: 100%;
+  max-width: 800px;
+  margin: 0 auto 2rem;
+  text-align: left;
+  font-size: 1.3rem;
+  color: #333;
+  border-left: 5px solid #cc0000;
+}
+
+/* シミュレーションのアコーディオン */
+.simulation-accordion {
+  max-width: 800px;
+  margin: 0 auto 4rem;
+}
+
+/* アコーディオンの共通スタイル（既存のアコーディオンスタイルを拡張） */
+.accordion-item {
+  background-color: var(--color-white); /* 白背景 */
+  margin-bottom: 1rem;
+  border: 1px solid #ddd;
+  border-radius: 6px;
+  overflow: hidden; /* content非表示のため */
+}
+.accordion-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 100%;
+  padding: 1.2rem 1.5rem;
+  background-color: transparent;
+  border: none;
+  cursor: pointer;
+  text-align: left;
+  font-family: 'Noto Sans JP', sans-serif;
+  font-size: 1.1rem;
+  color: var(--color-main); /* #8b0000 */
+  font-weight: 600;
+}
+.accordion-icon {
+  font-size: 1.5rem;
+  font-weight: bold;
+  color: var(--color-accent-red); /* #cc0000 */
+  transition: transform 0.3s ease;
+}
+.accordion-item.open .accordion-icon {
+  transform: rotate(45deg);
+}
+.accordion-content {
+  max-height: 0;
+  overflow: hidden;
+  transition: max-height 0.4s ease-out, padding 0.4s ease-out;
+  padding: 0 1.5rem; /* 開いた時のpadding */
+}
+.accordion-item.open .accordion-content {
+  max-height: 500px; /* 十分な高さを確保 */
+  padding: 1.5rem;
+}
+.accordion-content p {
+  margin: 0;
+  color: var(--color-text-light);
+  line-height: 1.7;
+}
+
+/* 7. アコーディオン展開（詳細学習内容） */
+.business-details {
+  padding: 5rem 0;
+  background-color: #f5f5f5; /* 薄グレー背景 */
+}
+.details-accordion {
+  max-width: 800px;
+  margin: 0 auto;
+}
+.accordion-item {
+  background-color: var(--color-white); /* 白背景 */
+  margin-bottom: 1rem;
+  border: 1px solid #ddd;
+  border-radius: 6px;
+  overflow: hidden; /* content非表示のため */
+}
+.accordion-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 100%;
+  padding: 1.2rem 1.5rem;
+  background-color: transparent;
+  border: none;
+  cursor: pointer;
+  text-align: left;
+  font-family: 'Playfair Display', serif;
+  font-size: 1.3rem;
+  color: var(--color-main); /* #8b0000 */
+  font-weight: 600;
+}
+.accordion-icon {
+  font-size: 1.5rem;
+  font-weight: bold;
+  color: var(--color-accent-red); /* #cc0000 */
+  transition: transform 0.3s ease;
+}
+.accordion-item.open .accordion-icon {
+  transform: rotate(45deg);
+}
+.accordion-content {
+  max-height: 0;
+  overflow: hidden;
+  transition: max-height 0.4s ease-out, padding 0.4s ease-out;
+  padding: 0 1.5rem; /* 開いた時のpadding */
+}
+.accordion-item.open .accordion-content {
+  max-height: 300px; /* 十分な高さを確保 */
+  padding: 1.5rem;
+}
+.accordion-content p {
+  margin: 0;
+  color: var(--color-text-light);
+  line-height: 1.7;
+}
+
+/* 8. 料金表セクション */
+.business-pricing {
+  padding: 5rem 0;
+  background-color: var(--color-off-white); /* #fdfdfd */
+}
+.pricing-table-container {
+  overflow-x: auto; /* モバイルで横スクロール */
+  margin-bottom: 1.5rem;
+}
+.pricing-table {
+  width: 100%;
+  max-width: 650px;
+  margin: 0 auto;
+  border-collapse: collapse;
+}
+.pricing-table th,
+.pricing-table td {
+  padding: 1.2rem 1rem;
+  text-align: center;
+  border: 1px solid #ddd;
+  vertical-align: middle;
+}
+.pricing-table th {
+  background-color: #ff7f7f;
+  font-weight: 700;
+  color: #333;
+}
+.pricing-table td {
+  background-color: #ffe6e6;
+}
+.pricing-table tr td:first-child {
+  background-color: #d3d3d3;
+  font-weight: bold;
+  width: 100px;
+}
+.price-header, .monthly-header {
+  background-color: #ff7f7f;
+  color: #333;
+  font-weight: bold;
+}
+.period-cell {
+  text-align: center;
+}
+.price-cell, .monthly-cell {
+  text-align: center;
+  color: #333;
+}
+.pricing-note {
+  text-align: center;
+  margin-top: 1.5rem;
+  color: #666;
+  font-size: 0.9rem;
+  font-family: var(--font-body);
+}
+
+.pricing-note sup {
+  color: #cc0000;
+  font-size: 0.75rem;
+  position: relative;
+  top: -2px;
+}
+
+.price-cell sup {
+  color: #cc0000;
+  font-size: 0.75rem;
+  position: relative;
+  top: -2px;
+}
+
+/* モバイル対応 */
+@media (max-width: 768px) {
+  .section-title {
+    font-size: 1.8rem;
+  }
+  /* ヒーロー */
+  .business-hero { padding: 5rem 0; }
+  .business-hero h1 { font-size: 2.5rem; }
+  .business-hero p { font-size: 1.1rem; }
+
+  /* 導入 */
+  .intro-grid { grid-template-columns: 1fr; } /* 縦1列 */
+  .intro-text { order: 2; } /* テキストを下に */
+  .intro-image { order: 1; } /* 画像を上に */
+
+  /* 9つの強み */
+  .strengths-grid { grid-template-columns: 1fr; } /* 縦1列 */
+
+  /* 学習スケジュール */
+  .tab { padding: 0.7rem 1.5rem; font-size: 1rem; }
+
+  /* 3つの柱 */
+  .pillars-grid { grid-template-columns: 1fr; } /* 縦1列 */
+
+  /* アコーディオン */
+  .accordion-header { font-size: 1.1rem; padding: 1rem 1.2rem;}
+  .accordion-content p { font-size: 0.95rem; }
+
+  /* 料金表 */
+  .pricing-table th, .pricing-table td {
+    padding: 0.8rem 0.5rem;
+    font-size: 0.85rem;
+  }
+  .pricing-note {
+    font-size: 0.8rem;
+    text-align: center;
+  }
+
+  /* 週末表スタイルのモバイル対応 */
+  .weekend-tables-container {
+    flex-direction: column;
+    gap: 2rem;
+  }
+  
+  .weekend-table {
+    width: 100%;
+  }
+  
+  .weekend-day {
+    width: 48%;
+  }
+  
+  .duration-tag {
+    font-size: 0.7rem;
+    padding: 0.1rem 0.4rem;
+  }
+
+  .simulation-title {
+    font-size: 1.1rem;
+    padding: 0.6rem;
+  }
+  
+  .accordion-header {
+    padding: 1rem 1.2rem;
+    font-size: 1rem;
+  }
+  
+  .accordion-content p {
+    font-size: 0.9rem;
+  }
+}

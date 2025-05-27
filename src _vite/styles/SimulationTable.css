@@ -1,0 +1,96 @@
+/* シミュレーションテーブルスタイル */
+.simulation-section {
+  margin-bottom: 3rem;
+}
+
+.simulation-table-container {
+  overflow-x: auto; /* モバイルで横スクロール */
+}
+
+.simulation-table {
+  width: 100%;
+  min-width: 600px; /* 横スクロール発生のため */
+  border-collapse: collapse;
+  box-shadow: 0 2px 5px rgba(0,0,0,0.05);
+  margin: 0 auto;
+  max-width: 800px;
+}
+
+.simulation-table th,
+.simulation-table td {
+  padding: 1rem;
+  border: 1px solid #e0e0e0;
+  text-align: center;
+  font-weight: bold;
+}
+
+.simulation-table th {
+  background-color: var(--color-light-gray);
+  color: var(--color-navy);
+  font-weight: bold;
+}
+
+/* Apply default background for all cells first */
+.simulation-table tbody td {
+  background-color: #fdfdfd; /* Default to even row color */
+}
+
+/* Override odd rows specifically */
+.simulation-table tbody tr:nth-child(odd) td, /* Target all td in odd rows */
+.simulation-table tbody tr:nth-child(odd) td.week-cell { /* Explicitly target .week-cell in odd rows */
+  background-color: #ffe6e6;
+}
+
+/* Ensure even rows have the default color (redundant but safe) */
+.simulation-table tbody tr:nth-child(even) td, /* Target all td in even rows */
+.simulation-table tbody tr:nth-child(even) td.week-cell { /* Explicitly target .week-cell in even rows */
+  background-color: #fdfdfd;
+}
+
+/* テーブルセルスタイル */
+.week-column {
+  width: 120px;
+  text-align: center;
+  background-color: #ff7f7f;
+}
+
+.theme-column {
+  text-align: center;
+  background-color: #ff7f7f;
+}
+
+.week-cell {
+  text-align: center;
+  font-weight: bold;
+}
+
+.simulation-title {
+  background-color: #f0f0f0;
+  padding: 0.8rem;
+  width: 100%;
+  max-width: 800px;
+  margin: 0 auto;
+  text-align: left;
+  font-size: 1.3rem;
+  color: #333;
+  border-left: 5px solid #cc0000;
+}
+
+/* モバイル対応 */
+@media (max-width: 768px) {
+  .simulation-title {
+    font-size: 1.1rem;
+    padding: 0.6rem;
+  }
+}
+
+/* Specific column widths */
+.simulation-table .week-column,
+.simulation-table .week-cell {
+  width: 15%;
+  min-width: 80px;
+}
+
+.simulation-table .theme-column {
+  width: 85%;
+} 

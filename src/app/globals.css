@@ -24,3 +24,242 @@ body {
   color: var(--foreground);
   font-family: Arial, Helvetica, sans-serif;
 }
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer components {
+  .home-page {
+    @apply min-h-screen;
+  }
+
+  .section-padding {
+    @apply py-16 md:py-24;
+  }
+
+  .alt-bg {
+    @apply bg-gray-50;
+  }
+
+  .container {
+    @apply max-w-7xl mx-auto px-4 sm:px-6 lg:px-8;
+  }
+
+  .vision-grid {
+    @apply grid grid-cols-1 md:grid-cols-2 gap-8 items-center;
+  }
+
+  .vision-text {
+    @apply space-y-4;
+  }
+
+  .vision-section-title {
+    @apply text-3xl font-bold text-gray-900;
+  }
+
+  .content-image {
+    @apply relative;
+  }
+
+  .image-right {
+    @apply order-2;
+  }
+
+  .vision-image-container img {
+    @apply rounded-lg shadow-lg;
+  }
+
+  .feature-grid {
+    @apply grid grid-cols-1 md:grid-cols-3 gap-8 mt-12;
+  }
+
+  .card-grid {
+    @apply grid grid-cols-1 md:grid-cols-2 gap-8;
+  }
+
+  .card {
+    @apply rounded-lg shadow-lg p-6 relative overflow-hidden;
+  }
+
+  .card-icon {
+    @apply text-4xl text-indigo-500 mb-4;
+  }
+
+  .card-title {
+    @apply text-xl font-bold mb-2;
+  }
+
+  .card-description {
+    @apply text-gray-600;
+  }
+
+  .service-card {
+    @apply min-h-[300px] flex flex-col justify-between;
+  }
+
+  .support-grid {
+    @apply grid grid-cols-1 md:grid-cols-2 gap-8;
+  }
+
+  .support-title {
+    @apply space-y-4;
+  }
+
+  .support-intro-text {
+    @apply text-lg text-gray-600;
+  }
+
+  .support-image {
+    @apply rounded-lg shadow-lg mt-4;
+  }
+
+  .support-link-items {
+    @apply space-y-6;
+  }
+
+  .support-link-item {
+    @apply flex items-start space-x-4;
+  }
+
+  .support-icon {
+    @apply text-2xl text-indigo-500;
+  }
+
+  .support-link-text {
+    @apply space-y-1;
+  }
+
+  .support-link-text h4 {
+    @apply text-lg font-semibold;
+  }
+
+  .support-link-text p {
+    @apply text-gray-600;
+  }
+
+  .primary-button {
+    @apply inline-flex items-center justify-center px-6 py-3 border border-transparent text-base font-medium rounded-md text-white bg-indigo-600 hover:bg-indigo-700;
+  }
+
+  .secondary-button {
+    @apply inline-flex items-center justify-center px-6 py-3 border border-transparent text-base font-medium rounded-md text-indigo-600 bg-white hover:bg-gray-50;
+  }
+
+  /* Business Page Styles */
+  .business-page {
+    @apply min-h-screen;
+  }
+
+  .content-grid {
+    @apply grid grid-cols-1 md:grid-cols-2 gap-8 items-center mt-8;
+  }
+
+  .content-text {
+    @apply space-y-4 text-gray-600;
+  }
+
+  .strengths-grid {
+    @apply grid grid-cols-1 md:grid-cols-3 gap-8 mt-12;
+  }
+
+  .schedule-tabs {
+    @apply flex space-x-4 mb-8;
+  }
+
+  .tab {
+    @apply px-4 py-2 text-sm font-medium rounded-md transition-colors;
+  }
+
+  .tab.active {
+    @apply bg-indigo-600 text-white;
+  }
+
+  .tab:not(.active) {
+    @apply bg-gray-100 text-gray-700 hover:bg-gray-200;
+  }
+
+  .schedule-grid {
+    @apply grid gap-4;
+  }
+
+  .schedule-item {
+    @apply p-4 rounded-lg;
+  }
+
+  .schedule-item.learning {
+    @apply bg-red-50;
+  }
+
+  .schedule-item.daily {
+    @apply bg-gray-50;
+  }
+
+  .time {
+    @apply font-medium text-gray-900;
+  }
+
+  .activity {
+    @apply text-gray-600;
+  }
+
+  .duration {
+    @apply text-sm text-gray-500 mt-1;
+  }
+
+  .weekend-schedule {
+    @apply grid grid-cols-1 md:grid-cols-2 gap-8;
+  }
+
+  .weekend-schedule h3 {
+    @apply text-lg font-medium text-gray-900 mb-4;
+  }
+
+  .simulation-section {
+    @apply bg-gray-50;
+  }
+
+  .simulation-table-container {
+    @apply mb-12;
+  }
+
+  .simulation-table-title {
+    @apply text-2xl font-bold text-gray-900 mb-6;
+  }
+
+  .simulation-grid {
+    @apply grid grid-cols-2 md:grid-cols-3 gap-4 mb-8;
+  }
+
+  .simulation-item {
+    @apply p-4 bg-white rounded-lg shadow-sm;
+  }
+
+  .week-label {
+    @apply text-sm text-gray-500;
+  }
+
+  .topic-label {
+    @apply font-medium text-gray-900 mt-1;
+  }
+
+  .accordion-container {
+    @apply space-y-2;
+  }
+
+  .accordion-item {
+    @apply bg-white rounded-lg shadow-sm overflow-hidden;
+  }
+
+  .accordion-header {
+    @apply w-full px-4 py-3 text-left flex justify-between items-center bg-gray-50 hover:bg-gray-100 transition-colors;
+  }
+
+  .accordion-header.active {
+    @apply bg-indigo-50;
+  }
+
+  .accordion-content {
+    @apply px-4 py-3 text-gray-600;
+  }
+}

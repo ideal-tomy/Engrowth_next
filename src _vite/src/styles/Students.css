@@ -1,0 +1,706 @@
+/* :root {
+  --color-main: #8b0000;
+  --color-accent: #d4af37;
+  --color-accent-red: #cc0000;
+  --color-white: #ffffff;
+  --color-off-white: #fdfdfd;
+  --color-light-gray: #eeeeee;
+  --color-text: #333333;
+  --font-body: 'Noto Sans JP', sans-serif;
+} */
+
+.students-page {
+  /* font-family: var(--font-body); */
+  color: var(--color-text);
+  padding-top: 80px;
+}
+
+/* ヒーローセクション */
+.students-hero {
+  background-color: #222;
+  background-image: url('../assets/images/留学生活01.jpeg');
+  background-size: cover;
+  background-position: center;
+  background-blend-mode: overlay;
+  color: white;
+  padding: 8rem 0;
+  text-align: center;
+  position: relative;
+}
+
+.students-hero::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.7));
+  z-index: 1;
+}
+
+.students-hero .container {
+  position: relative;
+  z-index: 2;
+}
+
+.students-hero h1 {
+  /* font-family: 'Playfair Display', serif; */
+  font-family: var(--font-heading);
+  font-size: 3.5rem;
+  margin-bottom: 1rem;
+  color: white;
+  text-shadow: 0 2px 4px rgba(0, 0, 0, 0.3);
+}
+
+.students-hero p {
+  font-size: 1.3rem;
+  margin-bottom: 2rem;
+  color: white;
+  text-shadow: 0 1px 2px rgba(0, 0, 0, 0.3);
+}
+
+/* 導入セクション */
+.students-introduction {
+  padding: 5rem 0;
+  background-color: var(--color-white);
+}
+
+.intro-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 3rem;
+  align-items: center;
+}
+
+/* Remove style for h2 inside intro-text as it's moved out */
+/* .intro-text h2 {
+  font-family: 'Playfair Display', serif;
+  font-size: 2.5rem;
+  margin-bottom: 1.5rem;
+  color: var(--color-main);
+} */
+
+.intro-text p {
+  font-size: 1.1rem;
+  line-height: 1.8;
+  margin-bottom: 1.5rem;
+  word-break: break-word;
+}
+
+.intro-image img {
+  width: 100%;
+  height: auto;
+  border-radius: 8px;
+  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
+}
+
+/* ペルソナセクション */
+.students-persona {
+  padding: 5rem 0;
+  background-color: var(--color-light-gray);
+}
+
+.section-title {
+  font-family: 'Playfair Display', serif;
+  font-size: 2.5rem;
+  text-align: center;
+  margin-bottom: 3rem;
+  color: var(--color-main);
+  position: relative;
+}
+
+.section-title::after {
+  content: '';
+  display: block;
+  width: 80px;
+  height: 3px;
+  background-color: var(--color-accent);
+  margin: 0.5rem auto 0;
+}
+
+.persona-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 2rem;
+}
+
+.persona-card {
+  background-color: var(--color-white);
+  padding: 2.5rem 2rem;
+  border-radius: 8px;
+  text-align: center;
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
+  transition: transform 0.3s, box-shadow 0.3s;
+}
+
+.persona-card:hover {
+  transform: translateY(-10px);
+  box-shadow: 0 15px 30px rgba(0, 0, 0, 0.1);
+}
+
+.persona-icon {
+  font-size: 3rem;
+  margin-bottom: 1.5rem;
+}
+
+.persona-card h3 {
+  color: var(--color-main);
+  margin-bottom: 1rem;
+  font-weight: 600;
+  font-size: 1.4rem;
+}
+
+/* 3ステップセクション */
+.students-steps {
+  padding: 5rem 0;
+  background-color: var(--color-white);
+}
+
+.steps-container {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 2rem;
+}
+
+.step-card {
+  background-color: var(--color-light-gray);
+  padding: 3rem 2rem;
+  border-radius: 8px;
+  text-align: center;
+  position: relative;
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
+  transition: transform 0.3s;
+}
+
+.step-card:hover {
+  transform: translateY(-8px);
+}
+
+.step-number {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 50px;
+  height: 50px;
+  background-color: var(--color-main);
+  color: white;
+  font-size: 1.5rem;
+  font-weight: bold;
+  border-radius: 50%;
+  margin: 0 auto 1.5rem;
+}
+
+.step-card h3 {
+  color: var(--color-main);
+  margin-bottom: 1rem;
+  font-weight: 600;
+  font-size: 1.4rem;
+}
+
+.step-link {
+  display: inline-block;
+  margin-top: 1.5rem;
+  color: var(--color-main);
+  text-decoration: none;
+  font-weight: 600;
+  transition: color 0.3s;
+}
+
+.step-link:hover {
+  color: var(--color-accent-red);
+}
+
+/* 詳細ステップセクション */
+.step-detail {
+  padding: 5rem 0 2rem 0;
+  background-color: var(--color-white);
+}
+
+.step-detail.alt-bg {
+  background-color: var(--color-light-gray);
+  padding: 5rem 0 2rem 0;
+}
+
+.step-content {
+  /* Remove or comment out grid layout for 2 columns */
+  /* display: grid; */
+  /* grid-template-columns: 1fr 1fr; */
+  /* gap: 3rem; */
+  /* align-items: start; */
+  /* Add margin to description if needed */
+}
+
+.step-description h3,
+.support-box h3 {
+  /* font-size: 1.6rem; */ /* Handled by StylishTitle */
+  /* margin: 2rem 0 1rem; */ /* Handled by StylishTitle */
+  /* color: var(--color-main); */ /* Handled by StylishTitle */
+  /* font-weight: 600; */ /* Handled by StylishTitle */
+  display: none; /* Hide old h3 if StylishTitle is used */
+}
+
+.step-description p {
+  margin-bottom: 1.5rem;
+  line-height: 1.8;
+}
+
+.step-features {
+  /* Change to 3-column grid */
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 2rem; /* Adjust gap as needed */
+  margin-top: 3rem; /* Add margin above the cards */
+}
+
+/* Styles for cards within step-features (might need adjustment) */
+.step-features .card {
+  /* Example: ensure full height if needed */
+  /* height: 100%; */
+}
+
+/* Remove or adjust styles for .feature if they conflict */
+/* .feature { ... } */
+
+.feature {
+  background-color: var(--color-light-gray);
+  padding: 2rem;
+  border-radius: 8px;
+  box-shadow: 0 3px 8px rgba(0, 0, 0, 0.05);
+}
+
+.step-detail.alt-bg .feature {
+  background-color: var(--color-white);
+}
+
+.feature-icon {
+  font-size: 2.5rem;
+  margin-bottom: 1rem;
+}
+
+.feature h4 {
+  color: var(--color-main);
+  margin-bottom: 0.8rem;
+  font-weight: 600;
+}
+
+.essay-features {
+  list-style: none;
+  padding: 0;
+  margin: 1.5rem 0;
+}
+
+.essay-features li {
+  padding-left: 1.5rem;
+  position: relative;
+  margin-bottom: 0.8rem;
+  line-height: 1.6;
+}
+
+.essay-features li::before {
+  content: "•";
+  position: absolute;
+  left: 0;
+  color: var(--color-main);
+  font-weight: bold;
+}
+
+.support-box {
+  background-color: var(--color-white);
+  padding: 2.5rem;
+  border-radius: 8px;
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
+}
+
+.step-detail.alt-bg .support-box {
+  background-color: var(--color-white);
+}
+
+.support-box h3 {
+  color: var(--color-main);
+  margin-bottom: 1.2rem;
+  font-weight: 600;
+  font-size: 1.4rem;
+}
+
+.support-box ul {
+  list-style: none;
+  padding: 0;
+  margin: 1.5rem 0;
+}
+
+.support-box ul li {
+  padding-left: 1.5rem;
+  position: relative;
+  margin-bottom: 0.8rem;
+  line-height: 1.6;
+}
+
+.support-box ul li::before {
+  content: "✓";
+  position: absolute;
+  left: 0;
+  color: var(--color-main);
+}
+
+.benefits {
+  margin: 2rem 0;
+  padding: 1.5rem;
+  background-color: rgba(139, 0, 0, 0.05);
+  border-radius: 8px;
+}
+
+.benefits h4 {
+  margin-bottom: 1.2rem;
+  font-weight: 600;
+  color: var(--color-main);
+}
+
+.benefit-item {
+  margin-bottom: 0.8rem;
+  line-height: 1.6;
+}
+
+.important-note {
+  margin-top: 2rem;
+  padding: 1.5rem;
+  border-left: 4px solid var(--color-main);
+  background-color: rgba(139, 0, 0, 0.05);
+}
+
+.important-note p {
+  margin-bottom: 1rem;
+  line-height: 1.6;
+}
+
+.important-note p:last-child {
+  margin-bottom: 0;
+}
+
+.simulation-intro {
+  text-align: center;
+  max-width: 800px;
+  margin: 0 auto;
+  font-size: 1.1rem;
+  line-height: 1.8;
+}
+
+/* 料金表セクション */
+.students-pricing {
+  padding: 5rem 0;
+  background-color: var(--color-light-gray);
+}
+
+.pricing-table-container {
+  /* background-color: var(--color-white); */ /* Remove white background */
+  border-radius: 8px;
+  /* box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1); */ /* Removed box-shadow */
+  overflow: hidden;
+  margin-bottom: 1rem;
+}
+
+.pricing-table {
+  width: 100%;
+  max-width: 650px; /* Adjust max-width as needed */
+  margin: 0 auto;
+  border-collapse: collapse;
+  /* box-shadow: 0 2px 5px rgba(0,0,0,0.05); */ /* Removed box-shadow */
+}
+
+.pricing-table th,
+.pricing-table td {
+  padding: 1.2rem 1.5rem;
+  text-align: left;
+  border-bottom: 1px solid #eee;
+}
+
+.pricing-table th {
+  background-color: var(--color-main);
+  color: white;
+  font-weight: 600;
+}
+
+.period-cell {
+  font-weight: 600;
+  color: var(--color-text);
+}
+
+.price-cell {
+  font-weight: 600;
+  color: var(--color-main);
+}
+
+.monthly-cell {
+  color: #666;
+}
+
+.pricing-note {
+  margin-top: 1.5rem;
+  text-align: center;
+  color: #666;
+  font-size: 0.9rem;
+}
+
+/* フェードインアニメーション */
+.fade-in {
+  animation: fadeIn 1s ease-in-out;
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* レスポンシブデザイン */
+@media (max-width: 992px) {
+  /* Remove or adjust step-content grid changes for medium screens */
+  /* .step-content {
+    grid-template-columns: 1fr;
+  } */
+  /* Adjust step-features for medium screens if needed */
+  .step-features {
+     grid-template-columns: 1fr; /* Stack cards on smaller screens */
+  }
+
+  .intro-grid,
+  .persona-grid,
+  .steps-container,
+  .step-content {
+    grid-template-columns: 1fr;
+    gap: 2rem;
+  }
+
+  .step-content {
+    gap: 3rem;
+  }
+
+  .intro-image {
+    order: -1;
+  }
+}
+
+@media (max-width: 768px) {
+  .students-hero {
+    padding: 6rem 0;
+  }
+
+  .students-hero h1 {
+    font-size: 2.5rem;
+  }
+
+  .section-title {
+    font-size: 2rem;
+  }
+
+  .pricing-table th,
+  .pricing-table td {
+    padding: 1rem;
+  }
+
+  /* Ensure step-features are stacked */
+  .step-features {
+     grid-template-columns: 1fr;
+  }
+}
+
+.testimonial-text {
+  font-style: italic;
+  color: #555;
+  margin-bottom: 1rem;
+  font-family: var(--font-body);
+}
+
+/* Margin top utility class */
+.mt-large {
+  margin-top: 2.5rem;
+}
+
+/* Adjust list styles */
+ul.essay-features,
+.support-box ul {
+  list-style: none; /* Remove default bullet points */
+  padding-left: 0; /* Remove default padding */
+  margin-top: 1rem;
+  margin-bottom: 1.5rem;
+}
+
+ul.essay-features li,
+.support-box ul li {
+  position: relative;
+  padding-left: 1.8em; /* Space for custom marker */
+  margin-bottom: 0.8rem;
+  line-height: 1.7;
+}
+
+ul.essay-features li::before,
+.support-box ul li::before {
+  content: '\2713'; /* Checkmark character */
+  position: absolute;
+  left: 0;
+  top: 1px; /* Adjust vertical alignment */
+  color: var(--color-main); /* Or accent color */
+  font-weight: bold;
+  font-size: 1.1em;
+}
+
+/* Style the benefit items */
+.benefits {
+  margin-top: 2rem;
+  padding: 1.5rem;
+  background-color: rgba(139, 0, 0, 0.05); /* Light main color background */
+  border-left: 4px solid var(--color-main);
+  border-radius: 4px;
+}
+
+.benefits h4 {
+  margin: 0 0 1rem 0;
+  color: var(--color-main);
+  font-weight: 600;
+}
+
+.benefit-item {
+  margin-bottom: 0.5rem;
+  color: var(--color-text);
+  font-weight: 500;
+}
+
+.important-note {
+  margin-top: 2rem;
+  padding: 1.5rem;
+  background-color: rgba(212, 175, 55, 0.08); /* Light accent color background */
+  border-left: 4px solid var(--color-accent);
+  border-radius: 4px;
+}
+
+.important-note p {
+  margin-bottom: 1rem;
+  color: var(--color-text);
+}
+
+.important-note p:last-child {
+  margin-bottom: 0;
+}
+
+/* Add styles for support-box within step-detail */
+.step-detail .support-box {
+  /* Add any specific styles for the support box itself if needed */
+  margin-top: 2rem; /* Example: Add some space above the support box */
+  padding: 1.5rem;
+  background-color: #fff; /* White background for contrast */
+  border-radius: var(--border-radius);
+  box-shadow: var(--shadow-card);
+}
+
+/* Target StylishTitle containers specifically within the support-box */
+.step-detail .support-box .stylish-title-container {
+  margin-bottom: 0rem; /* Reduce bottom margin for titles inside support-box */
+}
+
+/* Target StylishTitle containers specifically within the step-description */
+.step-detail .step-description .stylish-title-container {
+  margin-bottom: 0; /* Remove bottom margin for this specific title */
+}
+
+/* Add styles for Step 2 improvements */
+.step-detail#step2 .content-grid {
+  gap: 3rem; /* Add more gap between columns */
+}
+
+/* Style for the lists within Step 2 */
+.step-detail#step2 .check-list .icon-list-item {
+  border-left-color: var(--color-accent); /* Use accent color for border */
+  padding-left: 1rem; /* Adjust padding */
+  margin-bottom: 1rem; /* Adjust margin */
+}
+
+.step-detail#step2 .check-list .icon-container {
+  color: var(--color-accent); /* Use accent color for icon */
+  font-size: 1.2rem; /* Adjust icon size */
+  margin-right: 0.8rem; /* Adjust spacing */
+}
+
+.step-detail#step2 .check-list .icon-list-text {
+  font-weight: 500; /* Make text slightly less bold */
+}
+
+.mb-medium {
+  margin-bottom: 1.5rem !important; /* Utility class for margin */
+}
+
+.mt-large {
+  margin-top: 2.5rem !important; /* Utility class for margin */
+}
+
+/* Styling for benefits and important-note boxes */
+.benefits,
+.important-note {
+  margin-top: 2rem;
+  padding: 1.5rem;
+  border-radius: var(--border-radius);
+}
+
+.benefits {
+  background-color: rgba(44, 138, 67, 0.1); /* Light green background */
+  border-left: 4px solid #2c8a43; /* Green border */
+}
+
+.important-note {
+  background-color: rgba(255, 243, 205, 0.8); /* Light yellow background */
+  border-left: 4px solid #ffc107; /* Yellow border */
+}
+
+.benefits h4,
+.important-note h4 {
+  margin-top: 0;
+  margin-bottom: 1rem;
+  font-size: 1.1rem;
+  font-weight: 600;
+  color: var(--color-navy);
+  display: flex;
+  align-items: center;
+}
+
+.benefits h4 .material-symbols-outlined,
+.important-note h4 .material-symbols-outlined {
+  margin-right: 0.5em;
+  font-size: 1.3em; /* Make icon slightly larger */
+}
+
+.benefits .benefit-item {
+  margin-bottom: 0.5rem;
+  padding-left: 1.5em; /* Indent items */
+  position: relative;
+}
+
+.benefits .benefit-item::before {
+  content: "✓"; /* Checkmark */
+  position: absolute;
+  left: 0;
+  color: #2c8a43; /* Green checkmark */
+  font-weight: bold;
+}
+
+.important-note p {
+  margin-bottom: 1em;
+  font-size: 0.95rem; /* Slightly smaller text */
+  line-height: 1.7;
+}
+
+.important-note p:last-child {
+  margin-bottom: 0;
+}
+
+/* Styles for Step 2 introductory text */
+.step-intro-text {
+  text-align: center; /* Center align the text */
+  max-width: 800px; /* Limit width for readability, adjust as needed */
+  margin: 0 auto 2.5rem auto; /* Center horizontally and add bottom margin */
+  font-size: 1.1rem; /* Optional: Adjust font size */
+  line-height: 1.8; /* Optional: Adjust line height */
+} 

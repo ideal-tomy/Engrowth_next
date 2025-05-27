@@ -1,0 +1,197 @@
+@import url('https://fonts.googleapis.com/css2?family=Noto+Serif+JP:wght@400;500;600;700&display=swap');
+
+:root {
+  font-family: 'Noto Serif JP', serif;
+  line-height: 1.7;
+  font-weight: 400;
+
+  color-scheme: light dark;
+  color: #333333;
+  background-color: #ffffff;
+
+  font-synthesis: none;
+  text-rendering: optimizeLegibility;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+
+  --color-primary: #8b0000; /* ダークレッド */
+  --color-accent: #858585; /* グレー (ロゴの色) */
+  --color-navy: #1a2a3a; /* ダークネイビー */
+  --color-gray: #f9f9f9; /* 薄いグレー */
+  --color-text: #333333; /* 文字色 */
+  --color-white: #ffffff;
+  --color-main: #8b0000;
+  --font-heading: 'Noto Serif JP', serif;
+  --font-body: 'Noto Serif JP', serif;
+  --shadow-standard: 0 4px 12px rgba(0, 0, 0, 0.08);
+  --animation-standard: all 0.3s ease;
+}
+
+a {
+  font-weight: 500;
+  color: #1a2a3a;
+  text-decoration: none;
+  transition: var(--animation-standard);
+}
+
+a:hover {
+  color: var(--color-primary);
+}
+
+body {
+  margin: 0;
+  padding: 0;
+  min-width: 320px;
+  min-height: 100vh;
+  font-family: var(--font-body);
+  background-color: #fff;
+  color: var(--color-text);
+  line-height: var(--line-height, 1.7);
+}
+
+main {
+  padding-top: 100px; /* ヘッダーの高さに合わせて調整 */
+  min-height: calc(100vh - 100px);
+}
+
+h1, h2, h3, h4, h5, h6 {
+  font-family: var(--font-heading);
+  color: var(--color-navy);
+  line-height: 1.3;
+  margin-top: 0;
+}
+
+h1 {
+  font-size: 2.5rem;
+  font-weight: 700;
+  margin-bottom: 1.5rem;
+}
+
+h2 {
+  font-size: 2rem;
+  font-weight: 600;
+  margin-bottom: 1.2rem;
+}
+
+h3 {
+  font-size: 1.5rem;
+  font-weight: 600;
+  margin-bottom: 1rem;
+}
+
+p {
+  margin-bottom: 1.5rem;
+}
+
+button {
+  border-radius: 4px;
+  border: 1px solid transparent;
+  padding: 0.6em 1.2em;
+  font-size: 1rem;
+  font-weight: 500;
+  font-family: var(--font-body);
+  background-color: var(--color-navy);
+  color: white;
+  cursor: pointer;
+  transition: var(--animation-standard);
+}
+
+button:hover {
+  background-color: var(--color-primary);
+  transform: translateY(-2px);
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+button:focus,
+button:focus-visible {
+  outline: 2px solid var(--color-accent);
+  outline-offset: 2px;
+}
+
+/* アプリ全体のコンテナ */
+.app {
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+}
+
+#root {
+  width: 100%;
+}
+
+/* アニメーション */
+.fade-in {
+  animation: fadeIn 0.5s ease forwards;
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* スクロールバーのカスタマイズ */
+::-webkit-scrollbar {
+  width: 8px;
+}
+
+::-webkit-scrollbar-track {
+  background: #f1f1f1;
+}
+
+::-webkit-scrollbar-thumb {
+  background: var(--color-navy);
+  border-radius: 4px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: var(--color-primary);
+}
+
+@media (max-width: 768px) {
+  main {
+    padding-top: 160px; /* モバイル向けヘッダーの高さに合わせて調整 */
+  }
+  
+  h1 {
+    font-size: 2rem;
+  }
+  
+  h2 {
+    font-size: 1.7rem;
+  }
+  
+  h3 {
+    font-size: 1.4rem;
+  }
+}
+
+@media (prefers-color-scheme: light) {
+  :root {
+    color: #213547;
+    background-color: #ffffff;
+  }
+  a:hover {
+    color: var(--color-primary);
+  }
+  button {
+    background-color: var(--color-navy);
+  }
+}
+
+/* Scroll Fade In Animation */
+.fade-in-scroll-start {
+  opacity: 0;
+  transform: translateY(20px); /* 少し下から表示 */
+  transition: opacity 0.6s ease-out, transform 0.6s ease-out;
+}
+
+.fade-in-scroll-visible {
+  opacity: 1;
+  transform: translateY(0);
+}
