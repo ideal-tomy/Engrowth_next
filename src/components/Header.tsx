@@ -1,11 +1,12 @@
 import React, { useState, useEffect } from 'react';
-import { Link, useLocation } from 'react-router-dom';
+import Link from 'next/link';
+import { usePathname } from 'next/navigation';
 import '../styles/Header.css';
 
 const Header: React.FC = () => {
   const [isScrolled, setIsScrolled] = useState(false);
   const [isMenuOpen, setIsMenuOpen] = useState(false);
-  const location = useLocation();
+  const pathname = usePathname();
 
   // スクロール検出
   useEffect(() => {
@@ -36,7 +37,7 @@ const Header: React.FC = () => {
   return (
     <header className={`header ${isScrolled ? 'scrolled' : ''}`}>
       <div className="header-container">
-        <Link to="/" className="logo" onClick={closeMenu}>
+        <Link href="/" className="logo" onClick={closeMenu}>
           Engrowth
         </Link>
         <div className="hamburger-menu" onClick={toggleMenu}>
@@ -45,13 +46,13 @@ const Header: React.FC = () => {
           <span className={isMenuOpen ? 'open' : ''}></span>
         </div>
         <nav className={`nav ${isMenuOpen ? 'menu-open' : ''}`}>
-          <Link to="/vision" className={location.pathname === '/vision' ? 'active' : ''} onClick={closeMenu}>ビジョン</Link>
-          <Link to="/services" className={location.pathname === '/services' ? 'active' : ''} onClick={closeMenu}>サービス</Link>
-          <Link to="/business" className={location.pathname === '/business' ? 'active' : ''} onClick={closeMenu}>ビジネス</Link>
-          <Link to="/students" className={location.pathname === '/students' ? 'active' : ''} onClick={closeMenu}>学生</Link>
-          <Link to="/pricing" className={location.pathname === '/pricing' ? 'active' : ''} onClick={closeMenu}>料金</Link>
-          <Link to="/faq" className={location.pathname === '/faq' ? 'active' : ''} onClick={closeMenu}>よくある質問</Link>
-          <Link to="/contact" className="contact-button" onClick={closeMenu}>お問い合わせ</Link>
+          <Link href="/vision" className={pathname === '/vision' ? 'active' : ''} onClick={closeMenu}>ビジョン</Link>
+          <Link href="/services" className={pathname === '/services' ? 'active' : ''} onClick={closeMenu}>サービス</Link>
+          <Link href="/business" className={pathname === '/business' ? 'active' : ''} onClick={closeMenu}>ビジネス</Link>
+          <Link href="/students" className={pathname === '/students' ? 'active' : ''} onClick={closeMenu}>学生</Link>
+          <Link href="/pricing" className={pathname === '/pricing' ? 'active' : ''} onClick={closeMenu}>料金</Link>
+          <Link href="/faq" className={pathname === '/faq' ? 'active' : ''} onClick={closeMenu}>よくある質問</Link>
+          <Link href="/contact" className="contact-button" onClick={closeMenu}>お問い合わせ</Link>
         </nav>
       </div>
     </header>

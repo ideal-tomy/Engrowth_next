@@ -1,6 +1,7 @@
 'use client';
 
 import { useState } from 'react';
+import Image from 'next/image';
 
 interface SimulationTable {
   title: string;
@@ -32,9 +33,10 @@ export default function SimulationSection({ tables }: SimulationSectionProps) {
           <div key={tableIndex} className="simulation-table-container" style={{ marginBottom: '5rem' }}>
             {/* 仮画像：シミュレーション英会話のイメージ（例：会話するビジネスマンのイラストや英会話レッスン風景） */}
             <div style={{ display: 'flex', justifyContent: 'center', marginBottom: '1.5rem' }}>
-              <img
+              <Image
                 src="https://placehold.jp/600x180.png?text=英会話シーンのイメージ"
                 alt="英会話シーンの仮画像（例：ビジネス英会話・レッスン風景・会話する人物イラストなどが最適）"
+                width={600} height={180}
                 style={{ borderRadius: '12px', boxShadow: '0 4px 16px rgba(204,0,0,0.08)' }}
               />
             </div>

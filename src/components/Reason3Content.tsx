@@ -1,5 +1,5 @@
 import React from 'react';
-import StylishTitle from './StylishTitle';
+import Image from 'next/image';
 
   const habitSteps = [
     {
@@ -46,9 +46,10 @@ const Reason3Content: React.FC = () => {
         </div>
         <div className="flex-1 flex justify-center">
           {/* 仮画像：習慣化・行動科学イメージ（例：チェックリスト、カレンダー、習慣化のイラスト） */}
-          <img
+          <Image
             src="/images/habit_sample.jpg"
             alt="習慣化・行動科学イメージ（例：チェックリスト、カレンダー、習慣化のイラスト）"
+            width={288} height={192}
             className="rounded-xl shadow-md object-cover w-72 h-48"
           />
         </div>
@@ -68,9 +69,10 @@ const Reason3Content: React.FC = () => {
         </div>
         <div className="flex justify-center mt-6">
           {/* 仮画像：プログラム実践イメージ（例：サポートする様子、チェックイン、目標設定） */}
-          <img
+          <Image
             src="/images/program_sample.jpg"
             alt="プログラム実践イメージ（例：サポートする様子、チェックイン、目標設定）"
+            width={256} height={160}
             className="rounded-lg shadow object-cover w-64 h-40"
           />
         </div>
@@ -104,9 +106,10 @@ const Reason3Content: React.FC = () => {
         </p>
         <div className="flex justify-center mt-6">
           {/* 仮画像：サポート体制イメージ（例：チームで支える、チャット、フィードバック） */}
-          <img
+          <Image
             src="/images/support3_sample.jpg"
             alt="サポート体制イメージ（例：チームで支える、チャット、フィードバック）"
+            width={256} height={160}
             className="rounded-lg shadow object-cover w-64 h-40"
           />
         </div>
@@ -123,9 +126,10 @@ const Reason3Content: React.FC = () => {
           </div>
         <div className="flex-1 flex justify-center">
           {/* 仮画像：成果イメージ（例：成長グラフ、笑顔の学習者、海外で活躍する様子） */}
-          <img
+          <Image
             src="/images/result_sample.jpg"
             alt="成果イメージ（例：成長グラフ、笑顔の学習者、海外で活躍する様子）"
+            width={256} height={160}
             className="rounded-lg shadow object-cover w-64 h-40"
           />
         </div>

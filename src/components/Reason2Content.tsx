@@ -117,7 +117,7 @@ const Reason2Content: React.FC = () => {
       <section className="bg-blue-50 rounded-xl shadow-inner p-8">
         <h3 className="text-2xl font-bold text-blue-900 mb-4">本質を理解すれば誰でも「話せる」ようになる</h3>
         <p className="text-lg text-blue-800 font-semibold mb-2">
-          英語習得には必ず必要な<strong className="text-blue-700 font-bold">"5つのステップ"</strong>があります。
+          英語習得には必ず必要な<strong className="text-blue-700 font-bold">&quot;5つのステップ&quot;</strong>があります。
         </p>
         <p className="text-gray-700">
           これらを正しく実践することで、誰でも着実に英語力を伸ばすことが可能です。

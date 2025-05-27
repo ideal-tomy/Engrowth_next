@@ -50,7 +50,6 @@ export default function Vision() {
         <div className="container">
           <StylishTitle 
             title="社会課題に対する解決策"
-            type="section"
             align="center"
             size="large"
           />
@@ -95,7 +94,6 @@ export default function Vision() {
         <div className="container">
           <StylishTitle 
             title="教える側と学ぶ側のエコシステム"
-            type="section"
             align="center"
             size="large"
           />

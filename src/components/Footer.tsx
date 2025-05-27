@@ -1,4 +1,4 @@
-import { Link } from 'react-router-dom';
+import Link from 'next/link';
 import '../styles/Footer.css';
 
 const Footer = () => {
@@ -13,18 +13,18 @@ const Footer = () => {
           <div className="footer-section">
             <h4>リンク</h4>
             <nav className="footer-nav">
-              <Link to="/vision">Vision</Link>
-              <Link to="/services">Services</Link>
-              <Link to="/business">Business</Link>
-              <Link to="/students">Students</Link>
-              <Link to="/faq">FAQ</Link>
-              <Link to="/contact">お問い合わせ</Link>
+              <Link href="/vision">Vision</Link>
+              <Link href="/services">Services</Link>
+              <Link href="/business">Business</Link>
+              <Link href="/students">Students</Link>
+              <Link href="/faq">FAQ</Link>
+              <Link href="/contact">お問い合わせ</Link>
             </nav>
           </div>
           <div className="footer-section">
             <h4>お問い合わせ</h4>
             <p>お気軽にご連絡ください</p>
-            <Link to="/contact" className="contact-button">お問い合わせフォーム</Link>
+            <Link href="/contact" className="contact-button">お問い合わせフォーム</Link>
           </div>
         </div>
         <div className="footer-bottom">
