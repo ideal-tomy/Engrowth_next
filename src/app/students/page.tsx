@@ -10,6 +10,7 @@ import ScrollFadeIn from '@/components/ScrollFadeIn';
 const simulationTables = [
   {
     title: 'シミュレーション英会話①',
+    imageSrc: '/images/case03.jpeg',
     data: [
       { week: '1-2', topic: '挨拶' },
       { week: '3-4', topic: '自己紹介' },
@@ -29,6 +30,7 @@ const simulationTables = [
   },
   {
     title: 'シミュレーション英会話②',
+    imageSrc: '/images/case04.jpeg',
     data: [
       { week: '13-14', topic: 'ショッピング' },
       { week: '15-16', topic: '交通機関' },

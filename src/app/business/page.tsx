@@ -85,11 +85,13 @@ const simulationAccordionItems2 = [
 const simulationTables = [
   {
     title: 'シミュレーション英会話①',
+    imageSrc: '/images/case01.png',
     data: simulationData1,
     accordionItems: simulationAccordionItems1
   },
   {
     title: 'シミュレーション英会話②',
+    imageSrc: '/images/case02.png',
     data: simulationData2,
     accordionItems: simulationAccordionItems2
   }
