@@ -175,4 +175,74 @@ Available subsets: `latin`
 3.  **`src/app/globals.css` での適用:**
     `body` タグの `font-family` に `var(--font-noto-serif-jp)` が既に設定されているため、この変更によりローカルフォントが適用されます。
 
-これにより、`next/font/google` で発生したサブセットの問題を回避しつつ、意図した明朝体フォントをサイト全体に適用できる見込みです。 
+これにより、`next/font/google` で発生したサブセットの問題を回避しつつ、意図した明朝体フォントをサイト全体に適用できる見込みです。
+
+## タイトルのアンダーライン削除
+
+### 発生事象
+
+サイト内の一部のタイトル（例: ホームページの「Engrowthが提供する独自の価値」）の下に、視覚的なアンダーラインが表示されていました。
+
+### 原因分析
+
+このアンダーラインは、共通コンポーネント `src/components/StylishTitle.tsx` の内部で、タイトルテキスト (`<h2>`) の下に絶対配置された `<span>` 要素によって生成されていました。
+
+```typescript
+// src/components/StylishTitle.tsx 該当箇所 (修正前)
+<h2 className="... relative inline-block">
+  {renderHighlightedTitle()}
+  <span className="absolute bottom-0 left-0 w-full h-1 bg-indigo-500 transform -translate-y-2"></span>
+</h2>
+```
+
+### 実施した対策
+
+ユーザーの「全てのアンダーラインを消したい」という要望に基づき、`src/components/StylishTitle.tsx` 内のアンダーラインを生成している `<span>` 要素をコメントアウトしました。
+
+```typescript
+// src/components/StylishTitle.tsx 該当箇所 (修正後)
+<h2 className="... relative inline-block">
+  {renderHighlightedTitle()}
+  {/* <span className="absolute bottom-0 left-0 w-full h-1 bg-indigo-500 transform -translate-y-2"></span> */}
+</h2>
+```
+
+これにより、`StylishTitle` コンポーネントが使用されている全ての箇所で、アンダーラインが表示されなくなりました。
+
+## 「エングロースとは」セクションの追加とカラーテーマ変更
+
+### 実施内容
+
+1.  **トップページへのセクション追加 (`src/app/page.tsx`):**
+    *   ヒーローセクションの下に、「エングロースとは」という新しいセクションを追加しました。
+    *   内容はタイトル、説明文、および「ビジネス」「学生」「ビジョン」ページへのリンクボタン3つで構成されています。
+    *   ボタンには新しいスタイルクラス `new-primary-button` を適用しました。
+
+2.  **カラーテーマの定義 (`tailwind.config.js`):**
+    *   ユーザー指定のメインカラー `#d30306` とサブカラー `#6a6a6a` を、それぞれ `main`, `sub` としてTailwind CSSのカラーパレットに追加しました。
+
+    ```javascript
+    // tailwind.config.js (抜粋)
+    theme: {
+      extend: {
+        colors: {
+          main: '#d30306',
+          sub: '#6a6a6a',
+        },
+        // ...
+      },
+    },
+    ```
+
+3.  **グローバルCSSでのカラーテーマ適用 (`src/app/globals.css`):**
+    *   既存の `.primary-button` の背景色を `bg-main` (指定された赤系) に変更しました。
+    *   既存の `.secondary-button` のテキスト色を `text-main` に変更しました。
+    *   アクティブなタブ (`.tab.active`) の背景色を `bg-main` に変更しました。
+    *   新しく追加したセクション用のボタンスタイル `.new-primary-button` を定義し、背景色に `bg-main`、文字色に `text-white` を指定しました。
+
+### 確認事項
+
+*   トップページの新セクションの表示と内容の確認。
+*   サイト全体のボタンやアクティブなタブの色が、指定されたメインカラー（赤系）に変更されているかの確認。
+*   その他の箇所で意図しない色の変更がないかの確認。
+*   サブカラー (`#6a6a6a`) の適用については、現状多くのテキストがデフォルトのグレー系を使用しており、必要に応じて追加調整を検討。 

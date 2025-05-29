@@ -139,11 +139,15 @@ body {
   }
 
   .primary-button {
-    @apply inline-flex items-center justify-center px-6 py-3 border border-transparent text-base font-medium rounded-md text-white bg-indigo-600 hover:bg-indigo-700;
+    @apply inline-flex items-center justify-center px-6 py-3 border border-transparent text-base font-medium rounded-md text-white bg-[#d30306] hover:bg-[#d30306]/90;
+  }
+
+  .new-primary-button {
+    @apply inline-flex items-center justify-center px-8 py-3 border border-transparent text-base font-medium rounded-md text-white bg-[#d30306] hover:bg-[#d30306]/90 shadow-md transition-colors;
   }
 
   .secondary-button {
-    @apply inline-flex items-center justify-center px-6 py-3 border border-transparent text-base font-medium rounded-md text-indigo-600 bg-white hover:bg-gray-50;
+    @apply inline-flex items-center justify-center px-6 py-3 border border-transparent text-base font-medium rounded-md text-[#d30306] bg-white hover:bg-gray-50;
   }
 
   /* Business Page Styles */
@@ -172,7 +176,7 @@ body {
   }
 
   .tab.active {
-    @apply bg-indigo-600 text-white;
+    @apply bg-[#d30306] text-white;
   }
 
   .tab:not(.active) {

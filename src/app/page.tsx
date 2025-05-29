@@ -35,6 +35,27 @@ export default function Home() {
         height="large"
       />
 
+      {/* 新しい「エングロースとは」セクション */}
+      <section className="home-about-us section-padding alt-bg">
+        <div className="container text-center">
+          <h2 className="text-4xl font-bold text-gray-900 mb-6">エングロースとは</h2>
+          <p className="text-lg text-gray-700 max-w-3xl mx-auto mb-8">
+            エングロースは脳科学、言語学、心理学など科学的なアプローチを基に作られたプログラムです。アダプティブラーニングを採用し一人ひとりにカスタマイズされた学習内容・スケジュールを、海外の名門大学出身の専任コンサルタントが二人三脚でサポートします。
+          </p>
+          <div className="flex justify-center space-x-4">
+            <Link href="/business" className="new-primary-button">
+              ビジネス
+            </Link>
+            <Link href="/students" className="new-primary-button">
+              学生
+            </Link>
+            <Link href="/vision" className="new-primary-button">
+              ビジョン
+            </Link>
+          </div>
+        </div>
+      </section>
+
       <section className="home-vision section-padding">
         <div className="container vision-grid">
           <div className="vision-text">

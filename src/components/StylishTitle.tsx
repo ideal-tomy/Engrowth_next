@@ -57,7 +57,7 @@ const StylishTitle: React.FC<StylishTitleProps> = ({
     <div className={`${alignClass} ${className}`}>
       <h2 className={`${sizeClass} font-bold text-gray-900 relative inline-block`}>
         {renderHighlightedTitle()}
-        <span className="absolute bottom-0 left-0 w-full h-1 bg-indigo-500 transform -translate-y-2"></span>
+        {/* <span className="absolute bottom-0 left-0 w-full h-1 bg-indigo-500 transform -translate-y-2"></span> */}
       </h2>
       {subtitle && <p className="stylish-subtitle">{subtitle}</p>}
     </div>
