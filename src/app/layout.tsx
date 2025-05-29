@@ -1,7 +1,25 @@
 import type { Metadata } from "next";
-import { notoSans, notoSerif } from "@/fonts";
+import localFont from 'next/font/local'; // next/font/local をインポート
 import "./globals.css";
 import Navigation from "@/components/Navigation";
+
+// ローカルの Noto Serif JP フォントの設定
+const notoSerifJp = localFont({
+  src: [
+    {
+      path: '../fonts/NotoSerifJP-Regular.ttf',
+      weight: '400',
+      style: 'normal',
+    },
+    {
+      path: '../fonts/NotoSerifJP-Bold.ttf',
+      weight: '700',
+      style: 'normal',
+    },
+  ],
+  display: 'swap',
+  variable: '--font-noto-serif-jp', // CSS変数名を指定
+});
 
 export const metadata: Metadata = {
   title: "Engrowth",
@@ -14,7 +32,7 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="ja" className={`${notoSans.variable} ${notoSerif.variable}`}>
+    <html lang="ja" className={`${notoSerifJp.variable}`}> {/* classNameにCSS変数を適用 */}
       <head>
         <link
           rel="stylesheet"

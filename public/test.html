@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <title>Font Test - Noto Serif JP</title>
+    <style>
+        @font-face {
+            font-family: 'Test Noto Serif JP';
+            src: url('./NotoSerifJP-Regular.otf') format('opentype'); /* ファイル形式に合わせて format も変更 */
+        }
+        body {
+            font-family: 'Test Noto Serif JP', serif; /* フォールバックも serif に */
+            font-size: 24px;
+        }
+    </style>
+</head>
+<body>
+    これはNoto Serif JP（明朝体）で表示されるべきテキストです。
+    The quick brown fox jumps over the lazy dog.
+    あいうえお かきくけこ さしすせそ
+</body>
+</html>

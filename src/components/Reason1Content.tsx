@@ -27,13 +27,6 @@ const Reason1Content: React.FC = () => {
         </div>
         <div className="flex-1 flex justify-center">
           {/* 仮画像：日本人コンサルタントのイメージ（例：スーツ姿で親しみやすい雰囲気） */}
-          <Image
-            src="/images/consultant_sample.jpg"
-            alt="日本人コンサルタントのイメージ（例：スーツ姿で親しみやすい雰囲気）"
-            width={288}
-            height={192}
-            className="rounded-xl shadow-md object-cover w-72 h-48"
-          />
         </div>
       </section>
       
@@ -59,13 +52,6 @@ const Reason1Content: React.FC = () => {
         </div>
         <div className="flex justify-center mt-6">
           {/* 仮画像：成功体験の共有イメージ（例：笑顔のグループ、達成感） */}
-          <Image
-            src="/images/success_sample.jpg"
-            alt="成功体験の共有イメージ（例：笑顔のグループ、達成感）"
-            width={256}
-            height={160}
-            className="rounded-lg shadow object-cover w-64 h-40"
-          />
         </div>
       </section>
       
@@ -103,16 +89,6 @@ const Reason1Content: React.FC = () => {
           <h4 className="font-bold text-blue-700">体系的な介入とフィードバックの重要性</h4>
           <p className="text-gray-700">成長は「体系的な介入」による現在地の分析と、適切なフィードバックを繰り返すことで成立します。</p>
         </div>
-        <div className="flex justify-center mt-6">
-          {/* 仮画像：サポート・フィードバックのイメージ（例：コンサルタントがサポートする様子） */}
-          <Image
-            src="/images/support_sample.jpg"
-            alt="サポート・フィードバックのイメージ（例：コンサルタントがサポートする様子）"
-            width={256}
-            height={160}
-            className="rounded-lg shadow object-cover w-64 h-40"
-          />
-        </div>
       </section>
       
       {/* 5. 留学経験・学位取得の価値（グラデーション背景＋イメージ） */}
@@ -132,13 +108,6 @@ const Reason1Content: React.FC = () => {
           </div>
         <div className="flex-1 flex justify-center">
           {/* 仮画像：留学・学位取得のイメージ（例：卒業式、学位証書、海外の大学キャンパス） */}
-          <Image
-            src="/images/degree_sample.jpg"
-            alt="留学・学位取得のイメージ（例：卒業式、学位証書、海外の大学キャンパス）"
-            width={256}
-            height={160}
-            className="rounded-lg shadow object-cover w-64 h-40"
-            />
         </div>
       </section>
     </div>
