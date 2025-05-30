@@ -283,3 +283,36 @@ body {
   font-feature-settings: 'liga';
   -webkit-font-smoothing: antialiased;
 }
+
+/* 追加のSwiperスタイル */
+.swiper-button-next,
+.swiper-button-prev {
+  z-index: 20 !important; /* オーバーレイ(z-10)より手前に */
+  color: white !important; /* 見やすいように色を指定 */
+  background-color: rgba(0,0,0,0.2) !important; /* 背景を少しつけてみる */
+  border-radius: 50% !important;
+  width: 44px !important;
+  height: 44px !important;
+  margin-top: -22px !important; /* ボタンを垂直中央に配置するための調整 */
+}
+
+.swiper-button-next::after,
+.swiper-button-prev::after {
+  font-size: 20px !important; /* アイコンサイズ調整 */
+}
+
+.swiper-pagination-bullet {
+  background-color: white !important;
+  opacity: 0.7 !important;
+  z-index: 20 !important;
+}
+
+.swiper-pagination-bullet-active {
+  opacity: 1 !important;
+  background-color: #d30306 !important; /* アクティブなドットの色をメインカラーに合わせる */
+}
+
+.swiper-pagination {
+  z-index: 20 !important; /* ページネーションコンテナ自体も手前に */
+  bottom: 20px !important; /* 位置調整の例（必要に応じて調整） */
+}

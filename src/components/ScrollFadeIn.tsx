@@ -21,7 +21,7 @@ export default function ScrollFadeIn({ children, threshold = 0.1 }: ScrollFadeIn
         }
       },
       {
-        threshold,
+    threshold,
         rootMargin: '0px 0px -50px 0px'
       }
     );

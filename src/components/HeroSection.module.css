@@ -1,0 +1,57 @@
+/* src/components/HeroSection.module.css */
+.heroSection {
+  width: 100%;
+  height: 70vh; /* ビューポートの高さの70% */
+  position: relative;
+  overflow: hidden;
+}
+
+.swiperContainer {
+  width: 100%;
+  height: 100%;
+}
+
+.swiperSlide {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: relative; /* テキストを重ねるために必要 */
+}
+
+.swiperSlide img { /* next/image を layout="fill" で使用する場合、この指定は不要な場合が多い */
+  display: block;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.slideContent {
+  position: absolute;
+  z-index: 10;
+  color: white;
+  text-align: center;
+  padding: 20px;
+  background-color: rgba(0, 0, 0, 0.3); /* テキストの可読性向上のための背景 */
+  border-radius: 8px;
+}
+
+.slideTitle {
+  font-size: 2.5rem; /* 例 */
+  font-weight: bold;
+  margin-bottom: 0.5rem;
+}
+
+.slideSubtitle {
+  font-size: 1.2rem; /* 例 */
+}
+
+/* Swiperのナビゲーションボタンとページネーションのスタイル調整（必要に応じて） */
+/* 例: ボタンの色を変更する場合 */
+.heroSection :global(.swiper-button-next),
+.heroSection :global(.swiper-button-prev) {
+  color: #ffffff; /* 白色に変更 */
+}
+
+.heroSection :global(.swiper-pagination-bullet-active) {
+  background-color: #ffffff; /* アクティブなドットの色を白色に変更 */
+} 

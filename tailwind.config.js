@@ -10,6 +10,7 @@ module.exports = {
       colors: {
         main: '#d30306',
         sub: '#6a6a6a',
+        overlay: 'rgba(0, 0, 0, 0.3)',
       },
       fontFamily: {
         sans: ['var(--font-sans)', 'sans-serif'],

@@ -1,7 +1,7 @@
 import Image from 'next/image';
 import Link from 'next/link';
 import HeroSection from '@/components/HeroSection';
-import StylishTitle from '@/components/StylishTitle';
+// import StylishTitle from '@/components/StylishTitle'; // StylishTitle のインポートをコメントアウト
 import CardComponent from '@/components/CardComponent';
 
 // Data for Features section
@@ -26,14 +26,7 @@ const featureItems = [
 export default function Home() {
   return (
     <div className="home-page">
-      <HeroSection 
-        title="第二言語習得メソッド × 伴走型サポート"
-        subtitle="確実な成長と挑戦の場を提供する"
-        bgColor="gradient"
-        textColor="light"
-        align="center"
-        height="large"
-      />
+      <HeroSection />
 
       {/* 新しい「エングロースとは」セクション */}
       <section className="home-about-us section-padding alt-bg">
@@ -80,12 +73,13 @@ export default function Home() {
 
       <section className="home-features section-padding alt-bg">
         <div className="container">
-          <StylishTitle 
+          {/* <StylishTitle 
             title="Engrowthが提供する独自の価値"
             align="left"
             size="large"
             className="title-custom-underline"
-          />
+          /> */}
+          <h2 className="text-3xl font-bold text-gray-900 mb-8 title-custom-underline">Engrowthが提供する独自の価値</h2> {/* StylishTitleの代替 */}
           <div className="feature-grid card-grid">
             {featureItems.map((item, index) => (
               <CardComponent
@@ -105,12 +99,13 @@ export default function Home() {
 
       <section className="home-target section-padding">
         <div className="container">
-          <StylishTitle 
+          {/* <StylishTitle 
             title="あなたの目的達成を最適化"
             align="left"
             size="large"
             className="title-custom-underline"
-          />
+          /> */}
+          <h2 className="text-3xl font-bold text-gray-900 mb-8 title-custom-underline">あなたの目的達成を最適化</h2> {/* StylishTitleの代替 */}
           <div className="target-grid card-grid">
             <CardComponent 
               title="ビジネスパーソン向け"
@@ -135,11 +130,12 @@ export default function Home() {
       <section className="home-support section-padding alt-bg">
         <div className="container support-grid">
           <div className="support-title">
-            <StylishTitle
+            {/* <StylishTitle
               title="安心して学習を始めるために"
               size="large"
               className="title-custom-underline"
-            />
+            /> */}
+            <h2 className="text-3xl font-bold text-gray-900 mb-4 title-custom-underline">安心して学習を始めるために</h2> {/* StylishTitleの代替 */}
             <p className="support-intro-text">
               学習を始める前の疑問や不安は、こちらで解消できます。
             </p>

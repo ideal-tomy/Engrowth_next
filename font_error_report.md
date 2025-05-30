@@ -245,4 +245,59 @@ Available subsets: `latin`
 *   トップページの新セクションの表示と内容の確認。
 *   サイト全体のボタンやアクティブなタブの色が、指定されたメインカラー（赤系）に変更されているかの確認。
 *   その他の箇所で意図しない色の変更がないかの確認。
-*   サブカラー (`#6a6a6a`) の適用については、現状多くのテキストがデフォルトのグレー系を使用しており、必要に応じて追加調整を検討。 
+*   サブカラー (`#6a6a6a`) の適用については、現状多くのテキストがデフォルトのグレー系を使用しており、必要に応じて追加調整を検討。
+
+## トップページヒーローセクションの画像スライドショー化
+
+### 実施内容
+
+1.  **`swiper` ライブラリのインストール:**
+    *   `npm install swiper` を実行し、スライドショー機能に必要な `swiper` ライブラリをプロジェクトに追加しました。
+
+2.  **`HeroSection.tsx` の改修:**
+    *   `swiper/react` から `Swiper`, `SwiperSlide` コンポーネント、`swiper/modules` から `Navigation`, `Pagination`, `Autoplay` モジュールをインポートしました。
+    *   SwiperのコアCSSおよびナビゲーション、ページネーション用のCSSをインポートしました。
+    *   ヒーローセクションのコンテンツをSwiperコンポーネントに置き換えました。
+    *   指定された3枚のGIF画像 (`en_000.gif`, `en_01.gif`, `en_02.gif`) をスライドとして表示するように設定しました。画像は `public/images/` ディレクトリにある前提です。
+    *   スライドのオプションとして、ナビゲーションボタン、クリック可能なページネーション、5秒ごとの自動再生、ループ表示を有効にしました。
+    *   ヒーローセクションのタイトルとサブタイトルは、スライド画像の上にオーバーレイ表示されるようにしました（半透明の黒背景付き）。
+    *   ヒーローセクション全体の高さをレスポンシブに設定しました。
+
+    ```typescript
+    // src/components/HeroSection.tsx (主要部分抜粋)
+    import Image from 'next/image';
+    import { Swiper, SwiperSlide } from 'swiper/react';
+    import { Navigation, Pagination, Autoplay } from 'swiper/modules';
+    import 'swiper/css';
+    import 'swiper/css/navigation';
+    import 'swiper/css/pagination';
+
+    const images = [
+      { src: '/images/en_000.gif', alt: 'Engrowth Slide 1' },
+      { src: '/images/en_01.gif', alt: 'Engrowth Slide 2' },
+      { src: '/images/en_02.gif', alt: 'Engrowth Slide 3' },
+    ];
+
+    export default function HeroSection({ title, subtitle }) {
+      return (
+        <section className="relative w-full h-[500px] md:h-[600px] lg:h-[700px]">
+          <Swiper /* ...options... */ >
+            {images.map((image, index) => (
+              <SwiperSlide key={index}>
+                <Image src={image.src} alt={image.alt} layout="fill" objectFit="cover" />
+              </SwiperSlide>
+            ))}
+          </Swiper>
+          <div className="absolute inset-0 flex flex-col items-center justify-center ...">
+            {/* Title and Subtitle */}
+          </div>
+        </section>
+      );
+    }
+    ```
+
+### 確認事項
+
+*   スライドに使用するGIF画像 (`en_000.gif`, `en_01.gif`, `en_02.gif`) が `public/images/` に正しく配置されているか。
+*   ヒーローセクションの高さや、オーバーレイされるテキストのスタイルが適切か。
+*   スライドショーが意図通りに動作するか（自動再生、ナビゲーション、ページネーション）。 
